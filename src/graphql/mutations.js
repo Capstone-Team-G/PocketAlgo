@@ -1,0 +1,291 @@
+/* eslint-disable */
+// this is an auto generated file. This will be overwritten
+
+export const createCategories = /* GraphQL */ `
+  mutation CreateCategories(
+    $input: CreateCategoriesInput!
+    $condition: ModelCategoriesConditionInput
+  ) {
+    createCategories(input: $input, condition: $condition) {
+      id
+      name
+      algorithms {
+        items {
+          id
+          name
+          categoriesID
+          example
+          description
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const updateCategories = /* GraphQL */ `
+  mutation UpdateCategories(
+    $input: UpdateCategoriesInput!
+    $condition: ModelCategoriesConditionInput
+  ) {
+    updateCategories(input: $input, condition: $condition) {
+      id
+      name
+      algorithms {
+        items {
+          id
+          name
+          categoriesID
+          example
+          description
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const deleteCategories = /* GraphQL */ `
+  mutation DeleteCategories(
+    $input: DeleteCategoriesInput!
+    $condition: ModelCategoriesConditionInput
+  ) {
+    deleteCategories(input: $input, condition: $condition) {
+      id
+      name
+      algorithms {
+        items {
+          id
+          name
+          categoriesID
+          example
+          description
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const createAlgorithms = /* GraphQL */ `
+  mutation CreateAlgorithms(
+    $input: CreateAlgorithmsInput!
+    $condition: ModelAlgorithmsConditionInput
+  ) {
+    createAlgorithms(input: $input, condition: $condition) {
+      id
+      name
+      categoriesID
+      example
+      description
+      categories {
+        id
+        name
+        algorithms {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      quizes {
+        items {
+          id
+          algorithmsID
+          question
+          option
+          answer
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const updateAlgorithms = /* GraphQL */ `
+  mutation UpdateAlgorithms(
+    $input: UpdateAlgorithmsInput!
+    $condition: ModelAlgorithmsConditionInput
+  ) {
+    updateAlgorithms(input: $input, condition: $condition) {
+      id
+      name
+      categoriesID
+      example
+      description
+      categories {
+        id
+        name
+        algorithms {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      quizes {
+        items {
+          id
+          algorithmsID
+          question
+          option
+          answer
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const deleteAlgorithms = /* GraphQL */ `
+  mutation DeleteAlgorithms(
+    $input: DeleteAlgorithmsInput!
+    $condition: ModelAlgorithmsConditionInput
+  ) {
+    deleteAlgorithms(input: $input, condition: $condition) {
+      id
+      name
+      categoriesID
+      example
+      description
+      categories {
+        id
+        name
+        algorithms {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      quizes {
+        items {
+          id
+          algorithmsID
+          question
+          option
+          answer
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const createQuizes = /* GraphQL */ `
+  mutation CreateQuizes(
+    $input: CreateQuizesInput!
+    $condition: ModelQuizesConditionInput
+  ) {
+    createQuizes(input: $input, condition: $condition) {
+      id
+      algorithmsID
+      algorithms {
+        id
+        name
+        categoriesID
+        example
+        description
+        categories {
+          id
+          name
+          createdAt
+          updatedAt
+        }
+        quizes {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      question
+      option
+      answer
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const updateQuizes = /* GraphQL */ `
+  mutation UpdateQuizes(
+    $input: UpdateQuizesInput!
+    $condition: ModelQuizesConditionInput
+  ) {
+    updateQuizes(input: $input, condition: $condition) {
+      id
+      algorithmsID
+      algorithms {
+        id
+        name
+        categoriesID
+        example
+        description
+        categories {
+          id
+          name
+          createdAt
+          updatedAt
+        }
+        quizes {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      question
+      option
+      answer
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const deleteQuizes = /* GraphQL */ `
+  mutation DeleteQuizes(
+    $input: DeleteQuizesInput!
+    $condition: ModelQuizesConditionInput
+  ) {
+    deleteQuizes(input: $input, condition: $condition) {
+      id
+      algorithmsID
+      algorithms {
+        id
+        name
+        categoriesID
+        example
+        description
+        categories {
+          id
+          name
+          createdAt
+          updatedAt
+        }
+        quizes {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      question
+      option
+      answer
+      createdAt
+      updatedAt
+    }
+  }
+`;
