@@ -1,0 +1,26 @@
+type Categories @model {
+  id: ID!
+  name: String!
+  algorithms: [Algorithms] @connection(keyName: "byCategories", fields: ["id"])
+}
+
+type Algorithms @model @key(name: "byCategories", fields: ["categoriesID"]) {
+  id: ID!
+  name: String!
+  categoriesID: ID!
+  example: String
+  description: String
+  categories: Categories @connection(fields: ["categoriesID"])
+  quizes: [Quizes] @connection(keyName: "byAlgorithms", fields: ["id"])
+}
+
+type Quizes
+  @model
+  @key(name: "byAlgorithms", fields: ["algorithmsID", "question"]) {
+  id: ID!
+  algorithmsID: ID!
+  algorithms: Algorithms @connection(fields: ["algorithmsID"])
+  question: String
+  option: String
+  answer: String
+}
