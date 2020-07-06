@@ -1,16 +1,30 @@
 type Categories @model {
   id: ID!
   name: String!
-  algorithms: [Algorithms] @connection(keyName: "byCategories", fields: ["id"])
+  subcategories: [Subcategories]
+    @connection(keyName: "byCategories", fields: ["id"])
 }
 
-type Algorithms @model @key(name: "byCategories", fields: ["categoriesID"]) {
+type Subcategories @model @key(name: "byCategories", fields: ["categoriesID"]) {
   id: ID!
   name: String!
   categoriesID: ID!
+  description: String!
+  categories: Categories @connection(fields: ["categoriesID"])
+  algorithms: [Algorithms]
+    @connection(keyName: "bySubcategories", fields: ["id"])
+}
+
+type Algorithms
+  @model
+  @key(name: "bySubcategories", fields: ["subcategoriesID"]) {
+  id: ID!
+  name: String!
+  categoriesID: ID!
+  subcategoriesID: ID!
   example: String
   description: String
-  categories: Categories @connection(fields: ["categoriesID"])
+  subcategories: [Subcategories] @connection(fields: ["subcategoriesID"])
   quizes: [Quizes] @connection(keyName: "byAlgorithms", fields: ["id"])
 }
 
