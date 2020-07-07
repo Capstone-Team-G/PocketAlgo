@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Amplify from 'aws-amplify';
 import App from './App';
+import AlgorithmPage from './AlgorithmPage'
 import Home from './Home'
 import config from '../src/aws-exports'
 Amplify.configure(config)
