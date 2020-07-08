@@ -21,12 +21,12 @@ class AlgosByCategories extends React.Component {
   }
 
   render() {
-    console.log(this.props)
+    console.log("PROPS FROM CLASS", this.props)
     return (
       <div >
         {this.state.categories.map(category => (
           <div key={category.id}>
-            <Category category={category} history={[]} />
+            <Category category={category} history={this.props.history} />
           </div>
         ))}
       </div>
@@ -48,7 +48,7 @@ function Category(props) {
       <div id='subcategory'>
         {showSubcat ? props.category.subcategories.items.map(subcat => (
           <div key={subcat.id}>
-            <p onClick={() => console.log(subcat)} >{subcat.name}</p>
+            <p onClick={() => props.history.push(`/algorithms/${subcat.id}`)} >{subcat.name}</p>
           </div>
         )) : null}
       </div>
