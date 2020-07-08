@@ -91,6 +91,8 @@ export const getSubcategories = /* GraphQL */ `
           subcategoriesID
           example
           description
+          picture
+          pictureDescription
           subcategories {
             nextToken
           }
@@ -136,6 +138,8 @@ export const listSubcategoriess = /* GraphQL */ `
             subcategoriesID
             example
             description
+            picture
+            pictureDescription
             createdAt
             updatedAt
           }
@@ -157,6 +161,8 @@ export const getAlgorithms = /* GraphQL */ `
       subcategoriesID
       example
       description
+      picture
+      pictureDescription
       subcategories {
         items {
           id
@@ -188,6 +194,8 @@ export const getAlgorithms = /* GraphQL */ `
             subcategoriesID
             example
             description
+            picture
+            pictureDescription
             createdAt
             updatedAt
           }
@@ -218,6 +226,8 @@ export const listAlgorithmss = /* GraphQL */ `
         subcategoriesID
         example
         description
+        picture
+        pictureDescription
         subcategories {
           items {
             id
@@ -260,6 +270,8 @@ export const getQuizes = /* GraphQL */ `
         subcategoriesID
         example
         description
+        picture
+        pictureDescription
         subcategories {
           items {
             id
@@ -311,6 +323,8 @@ export const listQuizess = /* GraphQL */ `
           subcategoriesID
           example
           description
+          picture
+          pictureDescription
           subcategories {
             nextToken
           }

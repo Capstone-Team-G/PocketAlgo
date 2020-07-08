@@ -4,13 +4,13 @@ import { listAlgorithmss, getSubcategories, listSubcategoriess } from '../src/gr
 import AlgoViewFunction from './AlgoViewFunction';
 import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip } from 'recharts';
 
-export default function AlgorithmPage() {
+export default function AlgorithmPage(props) {
     const [subCategory, setSubCategory] = useState([]);
     const [algorithms, setAlgorithms] = useState([]);
 
     useEffect(() => {
-        // const id = this.props.match.params.id //takes id from url
-        const id = 'ecfc3985-c704-4511-9474-03f6ff7404d3'//dummy data (bubble sort)
+        const id = props.match.params.id //takes id from url
+        // const id = 'ecfc3985-c704-4511-9474-03f6ff7404d3'//dummy data (bubble sort)
         async function fetchAPI() {
             try {
                 const apiData = await API.graphql(graphqlOperation(getSubcategories, { id: id }));
