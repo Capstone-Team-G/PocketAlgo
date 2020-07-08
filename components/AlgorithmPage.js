@@ -3,6 +3,9 @@ import { API, graphqlOperation } from 'aws-amplify'
 import { listAlgorithmss, getSubcategories, listSubcategoriess } from '../src/graphql/queries'
 import AlgoViewFunction from './AlgoViewFunction';
 import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip } from 'recharts';
+import AceEditor from 'react-ace';
+import '../node_modules/ace-builds/src-noconflict/mode-javascript'
+import '../node_modules/ace-builds/src-noconflict/theme-dracula'
 
 export default function AlgorithmPage() {
     const [subCategory, setSubCategory] = useState([]);
@@ -35,13 +38,14 @@ export default function AlgorithmPage() {
     return (
         <div>
             <AlgoViewFunction algo={subCategory} />
-            <LineChart width={600} height={300} data={data} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
+            <LineChart width={300} height={300} data={data} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
                 <Line type="monotone" dataKey="uv" stroke="#8884d8" />
                 <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
                 <XAxis dataKey="name" />
                 <YAxis />
                 <Tooltip />
             </LineChart>
+            <AceEditor mode="javascript" theme="dracula" width={300} height={300}/>
         </div>
     )
 }

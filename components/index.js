@@ -11,7 +11,7 @@ Amplify.configure(config)
 ReactDOM.render(
   <div>
     {/* <h1>Hello, ALGO!!</h1> */}
-    <Home />
+    <AlgorithmPage />
     {/* <App /> */}
   </div>,
   document.getElementById('root')
