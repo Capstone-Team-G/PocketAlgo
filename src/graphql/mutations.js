@@ -135,6 +135,8 @@ export const createSubcategories = /* GraphQL */ `
           subcategoriesID
           example
           description
+          picture
+          pictureDescription
           subcategories {
             nextToken
           }
@@ -186,6 +188,8 @@ export const updateSubcategories = /* GraphQL */ `
           subcategoriesID
           example
           description
+          picture
+          pictureDescription
           subcategories {
             nextToken
           }
@@ -237,6 +241,8 @@ export const deleteSubcategories = /* GraphQL */ `
           subcategoriesID
           example
           description
+          picture
+          pictureDescription
           subcategories {
             nextToken
           }
@@ -265,6 +271,8 @@ export const createAlgorithms = /* GraphQL */ `
       subcategoriesID
       example
       description
+      picture
+      pictureDescription
       subcategories {
         items {
           id
@@ -296,6 +304,8 @@ export const createAlgorithms = /* GraphQL */ `
             subcategoriesID
             example
             description
+            picture
+            pictureDescription
             createdAt
             updatedAt
           }
@@ -324,6 +334,8 @@ export const updateAlgorithms = /* GraphQL */ `
       subcategoriesID
       example
       description
+      picture
+      pictureDescription
       subcategories {
         items {
           id
@@ -355,6 +367,8 @@ export const updateAlgorithms = /* GraphQL */ `
             subcategoriesID
             example
             description
+            picture
+            pictureDescription
             createdAt
             updatedAt
           }
@@ -383,6 +397,8 @@ export const deleteAlgorithms = /* GraphQL */ `
       subcategoriesID
       example
       description
+      picture
+      pictureDescription
       subcategories {
         items {
           id
@@ -414,6 +430,8 @@ export const deleteAlgorithms = /* GraphQL */ `
             subcategoriesID
             example
             description
+            picture
+            pictureDescription
             createdAt
             updatedAt
           }
@@ -445,6 +463,8 @@ export const createQuizes = /* GraphQL */ `
         subcategoriesID
         example
         description
+        picture
+        pictureDescription
         subcategories {
           items {
             id
@@ -494,6 +514,8 @@ export const updateQuizes = /* GraphQL */ `
         subcategoriesID
         example
         description
+        picture
+        pictureDescription
         subcategories {
           items {
             id
@@ -543,6 +565,8 @@ export const deleteQuizes = /* GraphQL */ `
         subcategoriesID
         example
         description
+        picture
+        pictureDescription
         subcategories {
           items {
             id

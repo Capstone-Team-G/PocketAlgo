@@ -24,6 +24,8 @@ type Algorithms
   subcategoriesID: ID!
   example: String
   description: String
+  picture: [String]
+  pictureDescription: [String]
   subcategories: [Subcategories] @connection(fields: ["subcategoriesID"])
   quizes: [Quizes] @connection(keyName: "byAlgorithms", fields: ["id"])
 }
