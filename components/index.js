@@ -1,18 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 import Amplify from 'aws-amplify';
-import AlgosByCategories from './AlgosByCategories';
-// import App from './App';
-import AlgorithmPage from './AlgorithmPage'
-import Home from './Home'
+import App from './App';
+import history from './history'
 import config from '../src/aws-exports'
 Amplify.configure(config)
 
 ReactDOM.render(
   <div>
-    {/* <h1>Hello, ALGO!!</h1> */}
-    <AlgorithmPage />
-    {/* <App /> */}
+    <Router history={history}>
+      <App />
+    </Router>
   </div>,
   document.getElementById('root')
 );
