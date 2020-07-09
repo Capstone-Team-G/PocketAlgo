@@ -14,7 +14,7 @@ import Grid from '@material-ui/core/Grid';
 
 import Header from './material-ui/headertemplate'
 import Footer from './material-ui/footertemplate'
-import AlgoTemp from './material-ui/algotemplate'
+import HomeTemp from './material-ui/hometemplate'
 
 class Home extends React.Component {
   constructor() {
@@ -53,46 +53,17 @@ class Home extends React.Component {
     console.log('cats', this.state.categories)
     return (
       <div >
-        <AlgoTemp />
+
         <Header />
-          <Landing />
+        <br></br>
+        <HomeTemp />
+
           <br></br>
-          {/* Categories Cards  */}
 
-          <Container maxWidth="md">
-            <h2 align='center'>Explore Categories</h2>
-          <Grid container spacing={4} align='center'>
-            {this.state.categories.map((card) => (
-              <Grid item key={card.id} xs={12} sm={6} md={4}>
-                <Card>
-                  <img
-                    src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcamo.githubusercontent.com%2F40b8099e638526dce298f8dc91246173d56e389a%2F68747470733a2f2f75706c6f61642e77696b696d656469612e6f72672f77696b6970656469612f636f6d6d6f6e732f7468756d622f382f38332f427562626c65736f72742d6564697465642d636f6c6f722e7376672f32323070782d427562626c65736f72742d6564697465642d636f6c6f722e7376672e706e67&f=1&nofb=1"
-
-                  />
-                  <CardContent>
-                    <Typography gutterBottom variant="h5" component="h2">
-                      {card.name}
-                    </Typography>
-                    <Typography>
-
-                    </Typography>
-                  </CardContent>
-                  <CardActions>
-                    <Button onClick={() => this.onClickHandler(card.id)} size="small" color="secondary" >
-                      View
-                    </Button>
-                    <Button size="small" color="primary">
-                      Graphs
-                    </Button>
-                  </CardActions>
-                </Card>
-              </Grid>
-            ))}
-          </Grid>
-
-        </Container>
-
-        {/* Category Cards End */}
+            {/* Footer */}
+          <br></br>
+          <Footer />
+      {/* End footer */}
 
         {/* {this.state.categories.map(rest => (
           <div key={rest.id}>
@@ -101,10 +72,6 @@ class Home extends React.Component {
           </div>
         ))} */}
 
-  {/* Footer */}
-  <br></br>
-          <Footer />
-      {/* End footer */}
 
       </div>
     );

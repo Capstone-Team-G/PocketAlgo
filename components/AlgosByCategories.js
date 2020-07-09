@@ -1,6 +1,11 @@
 import React, { useState } from 'react';
 import { API, graphqlOperation } from 'aws-amplify'
 import { listCategoriess } from '../src/graphql/queries'
+import Header from './material-ui/headertemplate'
+import Footer from './material-ui/footertemplate'
+import Grid from '@material-ui/core/Grid';
+import Paper from '@material-ui/core/Paper';
+import { makeStyles } from '@material-ui/core/styles';
 
 class AlgosByCategories extends React.Component {
   constructor() {
@@ -20,14 +25,24 @@ class AlgosByCategories extends React.Component {
     }
   }
 
+
+
   render() {
     return (
       <div >
+        <Header />
         {this.state.categories.map(category => (
           <div key={category.id}>
-            <Category category={category} history={this.props.history} />
+            <Grid item xs={12} align='center'>
+          <Paper>
+        {/* Place Component Below This Line */}
+          <Category category={category} history={this.props.history} />
+          </Paper>
+          </Grid>
+
           </div>
         ))}
+        <Footer />
       </div>
     );
   }
@@ -38,6 +53,11 @@ function Category(props) {
   const onClickHandler = () => {
     setShowSubcat(!showSubcat)
   }
+  const styles = {
+    fontSize: 40,
+    fontWeight: "bold"
+  }
+
 
   let dropdown;
   const subcategories = props.category.subcategories.items;
@@ -59,9 +79,8 @@ function Category(props) {
 
   return (
     <div id='category' >
-      <p style={{ fontWeight: "bold" }} onClick={() => onClickHandler()}>{props.category.name}</p>
+      <p style={styles} onClick={() => onClickHandler()}>{props.category.name}</p>
       <p >{props.category.description}</p>
-
       <div id='dropdown'>
         {showSubcat ? dropdown : null}
       </div>
