@@ -56,7 +56,7 @@ class Home extends React.Component {
 
         <Header />
         <br></br>
-        {/* <HomeTemp /> */}
+        <HomeTemp />
 
           <br></br>
 
@@ -65,12 +65,12 @@ class Home extends React.Component {
           <Footer />
       {/* End footer */}
 
-        {this.state.categories.map(rest => (
+        {/* {this.state.categories.map(rest => (
           <div key={rest.id}>
             <p onClick={() => this.onClickHandler(rest.id)}>{rest.name}</p>
             <p >{rest.description}</p>
           </div>
-        ))}
+        ))} */}
 
 
       </div>
