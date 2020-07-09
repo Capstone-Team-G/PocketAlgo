@@ -12,6 +12,7 @@ export const onCreateCategories = /* GraphQL */ `
           name
           categoriesID
           description
+          picture
           categories {
             id
             name
@@ -19,6 +20,30 @@ export const onCreateCategories = /* GraphQL */ `
             updatedAt
           }
           algorithms {
+            nextToken
+          }
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      algorithms {
+        items {
+          id
+          name
+          categoriesID
+          subcategoriesID
+          example
+          description
+          picture
+          pictureDescription
+          subcategories {
+            nextToken
+          }
+          quizes {
+            nextToken
+          }
+          categories {
             nextToken
           }
           createdAt
@@ -42,6 +67,7 @@ export const onUpdateCategories = /* GraphQL */ `
           name
           categoriesID
           description
+          picture
           categories {
             id
             name
@@ -49,6 +75,30 @@ export const onUpdateCategories = /* GraphQL */ `
             updatedAt
           }
           algorithms {
+            nextToken
+          }
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      algorithms {
+        items {
+          id
+          name
+          categoriesID
+          subcategoriesID
+          example
+          description
+          picture
+          pictureDescription
+          subcategories {
+            nextToken
+          }
+          quizes {
+            nextToken
+          }
+          categories {
             nextToken
           }
           createdAt
@@ -72,6 +122,7 @@ export const onDeleteCategories = /* GraphQL */ `
           name
           categoriesID
           description
+          picture
           categories {
             id
             name
@@ -79,6 +130,30 @@ export const onDeleteCategories = /* GraphQL */ `
             updatedAt
           }
           algorithms {
+            nextToken
+          }
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      algorithms {
+        items {
+          id
+          name
+          categoriesID
+          subcategoriesID
+          example
+          description
+          picture
+          pictureDescription
+          subcategories {
+            nextToken
+          }
+          quizes {
+            nextToken
+          }
+          categories {
             nextToken
           }
           createdAt
@@ -98,6 +173,7 @@ export const onCreateSubcategories = /* GraphQL */ `
       name
       categoriesID
       description
+      picture
       categories {
         id
         name
@@ -107,6 +183,22 @@ export const onCreateSubcategories = /* GraphQL */ `
             name
             categoriesID
             description
+            picture
+            createdAt
+            updatedAt
+          }
+          nextToken
+        }
+        algorithms {
+          items {
+            id
+            name
+            categoriesID
+            subcategoriesID
+            example
+            description
+            picture
+            pictureDescription
             createdAt
             updatedAt
           }
@@ -129,6 +221,9 @@ export const onCreateSubcategories = /* GraphQL */ `
             nextToken
           }
           quizes {
+            nextToken
+          }
+          categories {
             nextToken
           }
           createdAt
@@ -148,6 +243,7 @@ export const onUpdateSubcategories = /* GraphQL */ `
       name
       categoriesID
       description
+      picture
       categories {
         id
         name
@@ -157,6 +253,22 @@ export const onUpdateSubcategories = /* GraphQL */ `
             name
             categoriesID
             description
+            picture
+            createdAt
+            updatedAt
+          }
+          nextToken
+        }
+        algorithms {
+          items {
+            id
+            name
+            categoriesID
+            subcategoriesID
+            example
+            description
+            picture
+            pictureDescription
             createdAt
             updatedAt
           }
@@ -179,6 +291,9 @@ export const onUpdateSubcategories = /* GraphQL */ `
             nextToken
           }
           quizes {
+            nextToken
+          }
+          categories {
             nextToken
           }
           createdAt
@@ -198,6 +313,7 @@ export const onDeleteSubcategories = /* GraphQL */ `
       name
       categoriesID
       description
+      picture
       categories {
         id
         name
@@ -207,6 +323,22 @@ export const onDeleteSubcategories = /* GraphQL */ `
             name
             categoriesID
             description
+            picture
+            createdAt
+            updatedAt
+          }
+          nextToken
+        }
+        algorithms {
+          items {
+            id
+            name
+            categoriesID
+            subcategoriesID
+            example
+            description
+            picture
+            pictureDescription
             createdAt
             updatedAt
           }
@@ -229,6 +361,9 @@ export const onDeleteSubcategories = /* GraphQL */ `
             nextToken
           }
           quizes {
+            nextToken
+          }
+          categories {
             nextToken
           }
           createdAt
@@ -258,6 +393,7 @@ export const onCreateAlgorithms = /* GraphQL */ `
           name
           categoriesID
           description
+          picture
           categories {
             id
             name
@@ -291,6 +427,21 @@ export const onCreateAlgorithms = /* GraphQL */ `
           question
           option
           answer
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      categories {
+        items {
+          id
+          name
+          subcategories {
+            nextToken
+          }
+          algorithms {
+            nextToken
+          }
           createdAt
           updatedAt
         }
@@ -318,6 +469,7 @@ export const onUpdateAlgorithms = /* GraphQL */ `
           name
           categoriesID
           description
+          picture
           categories {
             id
             name
@@ -351,6 +503,21 @@ export const onUpdateAlgorithms = /* GraphQL */ `
           question
           option
           answer
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      categories {
+        items {
+          id
+          name
+          subcategories {
+            nextToken
+          }
+          algorithms {
+            nextToken
+          }
           createdAt
           updatedAt
         }
@@ -378,6 +545,7 @@ export const onDeleteAlgorithms = /* GraphQL */ `
           name
           categoriesID
           description
+          picture
           categories {
             id
             name
@@ -411,6 +579,21 @@ export const onDeleteAlgorithms = /* GraphQL */ `
           question
           option
           answer
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      categories {
+        items {
+          id
+          name
+          subcategories {
+            nextToken
+          }
+          algorithms {
+            nextToken
+          }
           createdAt
           updatedAt
         }
@@ -441,6 +624,7 @@ export const onCreateQuizes = /* GraphQL */ `
             name
             categoriesID
             description
+            picture
             createdAt
             updatedAt
           }
@@ -453,6 +637,15 @@ export const onCreateQuizes = /* GraphQL */ `
             question
             option
             answer
+            createdAt
+            updatedAt
+          }
+          nextToken
+        }
+        categories {
+          items {
+            id
+            name
             createdAt
             updatedAt
           }
@@ -489,6 +682,7 @@ export const onUpdateQuizes = /* GraphQL */ `
             name
             categoriesID
             description
+            picture
             createdAt
             updatedAt
           }
@@ -501,6 +695,15 @@ export const onUpdateQuizes = /* GraphQL */ `
             question
             option
             answer
+            createdAt
+            updatedAt
+          }
+          nextToken
+        }
+        categories {
+          items {
+            id
+            name
             createdAt
             updatedAt
           }
@@ -537,6 +740,7 @@ export const onDeleteQuizes = /* GraphQL */ `
             name
             categoriesID
             description
+            picture
             createdAt
             updatedAt
           }
@@ -549,6 +753,15 @@ export const onDeleteQuizes = /* GraphQL */ `
             question
             option
             answer
+            createdAt
+            updatedAt
+          }
+          nextToken
+        }
+        categories {
+          items {
+            id
+            name
             createdAt
             updatedAt
           }
