@@ -29,7 +29,7 @@ export default function DataStructurePage(props) {
                 <img src={dataStructure.picture} />}
             <h5>Algorithms related to {dataStructure.name}:</h5>
             {algorithms.map(algorithm => (
-                <p onClick={() => props.history.push(`/algorithms/${algorithm.id}`)}>{algorithm.name}</p>
+                <p onClick={() => props.history.push(`/algorithms/${algorithm.id}`)} key={algorithm.id}>{algorithm.name}</p>
             ))}
         </div>
     )
