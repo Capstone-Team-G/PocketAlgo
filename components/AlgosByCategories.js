@@ -28,8 +28,6 @@ class AlgosByCategories extends React.Component {
 
 
   render() {
-    console.log("PROPS FROM CLASS", this.props)
-
     return (
       <div >
         <Header />
@@ -61,17 +59,30 @@ function Category(props) {
   }
 
 
+  let dropdown;
+  const subcategories = props.category.subcategories.items;
+  const algorithms = props.category.algorithms.items;
+
+  if (subcategories.length) {
+    dropdown = subcategories.map(subcat => (
+      <div key={subcat.id}>
+        <p onClick={() => props.history.push(`/datastructures/${subcat.id}`)} >{subcat.name}</p>
+      </div>
+    ))
+  } else {
+    dropdown = algorithms.map(algo => (
+      <div key={algo.id}>
+        <p onClick={() => props.history.push(`/algorithms/${algo.id}`)} >{algo.name}</p>
+      </div>
+    ))
+  }
+
   return (
     <div id='category' >
       <p style={styles} onClick={() => onClickHandler()}>{props.category.name}</p>
       <p >{props.category.description}</p>
-
-      <div id='subcategory'>
-        {showSubcat ? props.category.subcategories.items.map(subcat => (
-          <div key={subcat.id}>
-            <p style={{fontSize: 30 }} onClick={() => props.history.push(`/algorithms/${subcat.id}`)} >{subcat.name}</p>
-          </div>
-        )) : null}
+      <div id='dropdown'>
+        {showSubcat ? dropdown : null}
       </div>
     </div>
   )
