@@ -3,6 +3,8 @@ type Categories @model {
   name: String!
   subcategories: [Subcategories]
     @connection(keyName: "byCategories", fields: ["id"])
+  algorithms: [Algorithms]
+    @connection(keyName: "byAlgoCategories", fields: ["id"])
 }
 
 type Subcategories @model @key(name: "byCategories", fields: ["categoriesID"]) {
@@ -10,6 +12,7 @@ type Subcategories @model @key(name: "byCategories", fields: ["categoriesID"]) {
   name: String!
   categoriesID: ID!
   description: String!
+  picture: String
   categories: Categories @connection(fields: ["categoriesID"])
   algorithms: [Algorithms]
     @connection(keyName: "bySubcategories", fields: ["id"])
@@ -17,7 +20,8 @@ type Subcategories @model @key(name: "byCategories", fields: ["categoriesID"]) {
 
 type Algorithms
   @model
-  @key(name: "bySubcategories", fields: ["subcategoriesID"]) {
+  @key(name: "bySubcategories", fields: ["subcategoriesID"])
+  @key(name: "byAlgoCategories", fields: ["categoriesID"]) {
   id: ID!
   name: String!
   categoriesID: ID!
@@ -28,6 +32,7 @@ type Algorithms
   pictureDescription: [String]
   subcategories: [Subcategories] @connection(fields: ["subcategoriesID"])
   quizes: [Quizes] @connection(keyName: "byAlgorithms", fields: ["id"])
+  categories: [Categories] @connection(fields: ["categoriesID"])
 }
 
 type Quizes
