@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { API, graphqlOperation } from 'aws-amplify'
-import { listAlgorithmss, getSubcategories, listSubcategoriess, getAlgorithms } from '../src/graphql/queries'
+import { getAlgorithms } from '../src/graphql/queries'
 import AlgoViewFunction from './AlgoViewFunction';
 import AceEditor from 'react-ace';
 import '../node_modules/ace-builds/src-noconflict/mode-javascript'
 import '../node_modules/ace-builds/src-noconflict/theme-dracula'
+import Animation from './Animation'
 
 export default function AlgorithmPage(props) {
-    const [algorithms, setAlgorithms] = useState([]);
+    const [algorithm, setAlgorithm] = useState({});
     const [pictures, setPictures] = useState([]);
     const [picturesDescription, setPicturesDescription] = useState([]);
 
@@ -17,7 +18,8 @@ export default function AlgorithmPage(props) {
         async function fetchAPI() {
             try {
                 const apiData = await API.graphql(graphqlOperation(getAlgorithms, { id: id }));
-                setAlgorithms(apiData.data.getAlgorithms);
+                console.log(apiData.data.getAlgorithms)
+                setAlgorithm(apiData.data.getAlgorithms);
                 setPictures(apiData.data.getAlgorithms.picture);
                 setPicturesDescription(apiData.data.getAlgorithms.pictureDescription);
             } catch (err) {
@@ -27,12 +29,12 @@ export default function AlgorithmPage(props) {
         fetchAPI();
     }, [])
 
-
     return (
         <div>
-            <AlgoViewFunction data={algorithms} />
-            <AceEditor mode="javascript" theme="dracula" value={algorithms.example}
-                fontSize={14} width={370} height={300} key={algorithms.id} />
+            <AlgoViewFunction data={algorithm} />
+            <Animation pictures={pictures} picturesDescription={picturesDescription} />
+            <AceEditor mode="javascript" theme="dracula" value={algorithm.example}
+                fontSize={14} width={370} height={300} key={algorithm.id} />
         </div>
     )
 }

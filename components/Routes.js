@@ -5,6 +5,7 @@ import AlgosByCategories from './AlgosByCategories'
 import AlgorithmPage from './AlgorithmPage';
 import DataStructurePage from './DTComponent';
 
+
 class Routes extends React.Component {
   render() {
     return (
@@ -12,7 +13,7 @@ class Routes extends React.Component {
         <Route exact path="/" component={Home} />
         <Route exact path="/bycategories" component={AlgosByCategories} />
         <Route exact path="/algorithms/:id" component={AlgorithmPage} />
-        <Route exact path="/dataStructure/:id" component={DataStructurePage} />
+        <Route exact path="/datastructures/:id" component={DataStructurePage} />
       </Switch>
     )
   }
