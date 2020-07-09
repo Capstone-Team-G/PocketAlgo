@@ -12,6 +12,7 @@ export const getCategories = /* GraphQL */ `
           name
           categoriesID
           description
+          picture
           categories {
             id
             name
@@ -19,6 +20,30 @@ export const getCategories = /* GraphQL */ `
             updatedAt
           }
           algorithms {
+            nextToken
+          }
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      algorithms {
+        items {
+          id
+          name
+          categoriesID
+          subcategoriesID
+          example
+          description
+          picture
+          pictureDescription
+          subcategories {
+            nextToken
+          }
+          quizes {
+            nextToken
+          }
+          categories {
             nextToken
           }
           createdAt
@@ -47,6 +72,22 @@ export const listCategoriess = /* GraphQL */ `
             name
             categoriesID
             description
+            picture
+            createdAt
+            updatedAt
+          }
+          nextToken
+        }
+        algorithms {
+          items {
+            id
+            name
+            categoriesID
+            subcategoriesID
+            example
+            description
+            picture
+            pictureDescription
             createdAt
             updatedAt
           }
@@ -66,6 +107,7 @@ export const getSubcategories = /* GraphQL */ `
       name
       categoriesID
       description
+      picture
       categories {
         id
         name
@@ -75,6 +117,22 @@ export const getSubcategories = /* GraphQL */ `
             name
             categoriesID
             description
+            picture
+            createdAt
+            updatedAt
+          }
+          nextToken
+        }
+        algorithms {
+          items {
+            id
+            name
+            categoriesID
+            subcategoriesID
+            example
+            description
+            picture
+            pictureDescription
             createdAt
             updatedAt
           }
@@ -99,6 +157,9 @@ export const getSubcategories = /* GraphQL */ `
           quizes {
             nextToken
           }
+          categories {
+            nextToken
+          }
           createdAt
           updatedAt
         }
@@ -121,10 +182,14 @@ export const listSubcategoriess = /* GraphQL */ `
         name
         categoriesID
         description
+        picture
         categories {
           id
           name
           subcategories {
+            nextToken
+          }
+          algorithms {
             nextToken
           }
           createdAt
@@ -169,6 +234,7 @@ export const getAlgorithms = /* GraphQL */ `
           name
           categoriesID
           description
+          picture
           categories {
             id
             name
@@ -207,6 +273,21 @@ export const getAlgorithms = /* GraphQL */ `
         }
         nextToken
       }
+      categories {
+        items {
+          id
+          name
+          subcategories {
+            nextToken
+          }
+          algorithms {
+            nextToken
+          }
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       createdAt
       updatedAt
     }
@@ -234,6 +315,7 @@ export const listAlgorithmss = /* GraphQL */ `
             name
             categoriesID
             description
+            picture
             createdAt
             updatedAt
           }
@@ -246,6 +328,15 @@ export const listAlgorithmss = /* GraphQL */ `
             question
             option
             answer
+            createdAt
+            updatedAt
+          }
+          nextToken
+        }
+        categories {
+          items {
+            id
+            name
             createdAt
             updatedAt
           }
@@ -278,6 +369,7 @@ export const getQuizes = /* GraphQL */ `
             name
             categoriesID
             description
+            picture
             createdAt
             updatedAt
           }
@@ -290,6 +382,15 @@ export const getQuizes = /* GraphQL */ `
             question
             option
             answer
+            createdAt
+            updatedAt
+          }
+          nextToken
+        }
+        categories {
+          items {
+            id
+            name
             createdAt
             updatedAt
           }
@@ -329,6 +430,9 @@ export const listQuizess = /* GraphQL */ `
             nextToken
           }
           quizes {
+            nextToken
+          }
+          categories {
             nextToken
           }
           createdAt

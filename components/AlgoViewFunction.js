@@ -1,11 +1,11 @@
 import React from 'react';
 
 const AlgoViewFunction=(props)=>{
-const algoData=props.algo;
+const data=props.data;
     return(
-        <div key={algoData.id}>
-            <p>{algoData.name}</p>
-            <p>{algoData.description}</p>
+        <div key={data.id}>
+            <h2>{data.name}</h2>
+            <p>{data.description}</p>
         </div>
     )
 }

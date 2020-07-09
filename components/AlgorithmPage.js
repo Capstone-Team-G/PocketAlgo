@@ -30,7 +30,7 @@ export default function AlgorithmPage(props) {
 
     return (
         <div>
-            <AlgoViewFunction algo={algorithms} />
+            <AlgoViewFunction data={algorithms} />
             <AceEditor mode="javascript" theme="dracula" value={algorithms.example}
                 fontSize={14} width={370} height={300} key={algorithms.id} />
         </div>
