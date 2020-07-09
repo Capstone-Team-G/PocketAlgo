@@ -50,7 +50,7 @@ export default function HomeTemp() {
 {/* See Categories */}
 <Grid item xs={12}>
   <Paper className={classes.paper}>
-    <h1 align='center'><Link href="/bycategories">See Categories Here</Link></h1>
+    <h1 align='center'><Link href="https://master.d1utv16exoeqqk.amplifyapp.com/bycategories">See Categories Here</Link></h1>
     {/* Place Component Below This Line */}
   </Paper>
 </Grid>
