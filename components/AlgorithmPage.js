@@ -31,7 +31,7 @@ export default function AlgorithmPage(props) {
 
     return (
         <div>
-            <AlgoViewFunction algo={algorithm} />
+            <AlgoViewFunction data={algorithm} />
             <Animation pictures={pictures} picturesDescription={picturesDescription} />
             <AceEditor mode="javascript" theme="dracula" value={algorithm.example}
                 fontSize={14} width={370} height={300} key={algorithm.id} />

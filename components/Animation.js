@@ -20,8 +20,8 @@ export default function Animation(props) {
   return (
 
     <div>
-      <h1>{props.pictures[pointer]}</h1>
-      <p>{props.picturesDescription[pointer]}</p>
+      <h1>{props.pictures ? props.pictures[pointer] : null}</h1>
+      <p>{props.picturesDescription ? props.picturesDescription[pointer] : null}</p>
       <button id='previous' type='button' onClick={() => {
         prevButtonCheck()
         setPointer(pointer - 1);
