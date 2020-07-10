@@ -50,13 +50,13 @@ class Home extends React.Component {
   }
 
   render() {
-    console.log('cats', this.state.categories)
+    console.log('just this', this)
     return (
       <div >
 
         <Header />
         <br></br>
-        <HomeTemp />
+        <HomeTemp history={this.props.history} />
 
           <br></br>
 
