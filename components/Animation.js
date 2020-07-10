@@ -17,11 +17,10 @@ export default function Animation(props) {
     document.getElementById("previous").disabled = true //sets "PREVIOUS" button as inactive when page loaded
   }, [])
 
-  return (
+  const picturesExist = props.pictures
 
-    <div>
-      <h1>{props.pictures ? props.pictures[pointer] : null}</h1>
-      <p>{props.picturesDescription ? props.picturesDescription[pointer] : null}</p>
+  const buttonBlock =
+    <div id='buttons'>
       <button id='previous' type='button' onClick={() => {
         prevButtonCheck()
         setPointer(pointer - 1);
@@ -31,6 +30,14 @@ export default function Animation(props) {
         nextButtonCheck()
         setPointer(pointer + 1);
       }}>NEXT</button>
+    </div>
+
+  return (
+
+    <div>
+      <h1>{picturesExist ? props.pictures[pointer] : null}</h1>
+      <p>{picturesExist ? props.picturesDescription[pointer] : null}</p>
+      {picturesExist ? buttonBlock : null}
     </div>
   )
 }
