@@ -19,8 +19,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
-export default function HomeTemp(props) {
-  console.log('propsss', props)
+export default function HomeTemp() {
   const classes = useStyles();
 
   const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
@@ -52,7 +51,7 @@ export default function HomeTemp(props) {
 <Grid item xs={12}>
   <Paper className={classes.paper}>
     {/* Place Component Below This Line */}
-    <h1 align='center' onClick={() => {props.history.push('/bycategories')}}>See Categories Here</h1>
+    <h1 align='center'><Link href="/bycategories">See Categories Here</Link></h1>
   </Paper>
 </Grid>
 </Grid>

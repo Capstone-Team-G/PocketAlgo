@@ -56,7 +56,7 @@ class Home extends React.Component {
 
         <Header />
         <br></br>
-        <HomeTemp history={this.props.history} />
+        <HomeTemp />
 
           <br></br>
 
