@@ -6,13 +6,26 @@ import Footer from './material-ui/footertemplate'
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import { makeStyles } from '@material-ui/core/styles';
+import styled from 'styled-components';
 
+const HoverText = styled.p`
+	color: #000;
+	:hover {
+		color: #ed1212;
+		cursor: pointer;
+	}
+`
 class AlgosByCategories extends React.Component {
   constructor() {
     super();
     this.state = {
-      categories: []
+      categories: [],
+      hover: false
     }
+  }
+
+  toggleHover() {
+    this.setState({hover: !this.state.hover})
   }
 
   async componentDidMount() {
@@ -29,20 +42,31 @@ class AlgosByCategories extends React.Component {
 
 
   render() {
+    var linkStyle;
+   if (this.state.hover) {
+     linkStyle = {color: '#ed1212',cursor: 'pointer'}
+   } else {
+     linkStyle = {color: '#000'}
+   }
     return (
-      <div >
+      <div style={{backgroundColor: 'black'}}>
         <Header />
+        <h1 style= {{color: 'white', fontFamily: 'true north'}} align= "center"> <span style={{color: 'gold'}}> /* </span> Power Your Code: <span style={{color: 'gold'}}> */ </span> </h1>
+
         {this.state.categories.map(category => (
           <div key={category.id}>
             <Grid item xs={12} align='center'>
           <Paper>
         {/* Place Component Below This Line */}
+          <HoverText style={linkStyle} onMouseEnter={this.toggleHover} onMouseLeave={this.toggleHover}>
           <Category category={category} history={this.props.history} />
+          </HoverText>
           </Paper>
           </Grid>
 
           </div>
         ))}
+        {/* <Link /> */}
         <Footer />
       </div>
     );
@@ -56,7 +80,9 @@ function Category(props) {
   }
   const styles = {
     fontSize: 40,
-    fontWeight: "bold"
+    fontWeight: "bold",
+    fontFamily: 'informal',
+    color: 'green'
   }
 
 
@@ -67,20 +93,24 @@ function Category(props) {
   if (subcategories.length) {
     dropdown = subcategories.map(subcat => (
       <div key={subcat.id}>
-        <p onClick={() => props.history.push(`/datastructures/${subcat.id}`)} >{subcat.name}</p>
+        <h2 onClick={() => props.history.push(`/datastructures/${subcat.id}`)} >{subcat.name}</h2>
       </div>
     ))
   } else {
     dropdown = algorithms.map(algo => (
       <div key={algo.id}>
-        <p onClick={() => props.history.push(`/algorithms/${algo.id}`)} >{algo.name}</p>
+        <h2 onClick={() => props.history.push(`/algorithms/${algo.id}`)} >{algo.name}</h2>
       </div>
     ))
   }
 
   return (
     <div id='category' >
-      <p style={styles} onClick={() => onClickHandler()}>{props.category.name}</p>
+      <p style={styles} onClick={() => onClickHandler()}>
+        <span style={{ color: 'purple' , textDecoration: 'none' }}> [ </span>
+        {props.category.name}
+        <span style={{ color: 'purple' , textDecoration: 'none' }}> ] </span>
+      </p>
       <p >{props.category.description}</p>
       <div id='dropdown'>
         {showSubcat ? dropdown : null}

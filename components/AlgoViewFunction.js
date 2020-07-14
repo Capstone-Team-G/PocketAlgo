@@ -5,7 +5,7 @@ const data=props.data;
     return(
         <div key={data.id}>
             <h2 align='center'>{data.name}</h2>
-            <p align='center'>{data.description}</p>
+            <p align='center' style= {{paddingLeft: 50, paddingRight: 50 , paddingBottom: 40}}>{data.description}</p>
         </div>
     )
 }

@@ -1,27 +1,20 @@
+
 {
   "short_name": "React PWA App",
   "name": "React PWA App",
   "icons": [
     {
-<<<<<<< HEAD
-      "src": "/public/PA_maskable_icon.png",
-=======
       "src": "PA_maskable_icon.png",
->>>>>>> 52fff18e1c0b0b7f2db2602e67b0a0aedb2cdd13
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-<<<<<<< HEAD
-      "src": "/public/PA_maskable_icon.png",
-=======
       "src": "PA_maskable_icon.png",
->>>>>>> 52fff18e1c0b0b7f2db2602e67b0a0aedb2cdd13
       "sizes": "512x512",
       "type": "image/png"
     }
   ],
-  "start_url": ".",
+  "start_url": "../public/index.html",
   "display": "standalone",
   "theme_color": "#066ace",
   "background_color": "#202020"
