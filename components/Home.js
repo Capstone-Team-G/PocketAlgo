@@ -15,13 +15,17 @@ import Grid from '@material-ui/core/Grid';
 import Header from './material-ui/headertemplate'
 import Footer from './material-ui/footertemplate'
 import HomeTemp from './material-ui/hometemplate'
+import Seedrandom from 'seedrandom'
+
+
 
 class Home extends React.Component {
   constructor() {
     super();
     this.state = {
       categories: [],
-      algorithm: {}
+      algorithms: {},
+      dayAlgo: {}
     }
   }
 
@@ -32,16 +36,28 @@ class Home extends React.Component {
       console.log('restics', apiAlgos);
       const categories = apiData.data.listCategoriess.items;
       const algorithms = apiAlgos.data.listAlgorithmss.items;
-      this.setState({ categories: categories, algorithm: this.randomizer(algorithms) });
+      this.setState({ categories: categories, dayAlgo: this.randomizerDaily(algorithms), algorithms: algorithms });
       console.log(this.state);
     } catch (err) {
       console.log('error: ', err);
     }
   }
 
-  randomizer(arr) {
-    let index = Math.floor(Math.random() * arr.length);
+  randomizerDaily(arr) {
+    const date = new Date().getDate();
+    const ran = Seedrandom(date);
+    let index = Math.floor(ran() * arr.length);
     return arr[index];
+  }
+
+  algoRandomizer() {
+    const arr = this.state.algorithms;
+    let index = Math.floor(Math.random() * arr.length);
+    return arr[index].id;
+  }
+
+  randomOnClickHandler(event) {
+    
   }
 
   async onClickHandler(id) {
@@ -58,7 +74,7 @@ class Home extends React.Component {
   }
 
   render() {
-    console.log('cats', this.state.categories)
+    console.log('just this', this)
     return (
       <div >
 

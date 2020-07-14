@@ -50,8 +50,8 @@ export default function HomeTemp() {
 {/* See Categories */}
 <Grid item xs={12}>
   <Paper className={classes.paper}>
-    <h1 align='center'><Link href="/bycategories">See Categories Here</Link></h1>
     {/* Place Component Below This Line */}
+    <h1 align='center'><Link href="/bycategories">See Categories Here</Link></h1>
   </Paper>
 </Grid>
 </Grid>
