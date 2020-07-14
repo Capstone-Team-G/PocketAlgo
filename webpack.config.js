@@ -35,12 +35,13 @@ module.exports = {
     },
     plugins: [
         // Other plugins...
-        new GenerateSW()
+        new GenerateSW(),
+        // new CopyWebpackPlugin({
+        //     patterns: [
+        //       { from: path.resolve(__dirname, './public') },
+        //     ],
+        //   })
       ]
 };
 
-new CopyWebpackPlugin({
-    patterns: [
-      { from: path.resolve(__dirname, './public') },
-    ],
-  })
+
