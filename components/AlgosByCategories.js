@@ -48,8 +48,10 @@ class AlgosByCategories extends React.Component {
      linkStyle = {color: '#000'}
    }
     return (
-      <div >
+      <div style={{backgroundColor: 'black'}}>
         <Header />
+        <h1 style= {{color: 'white', fontFamily: 'true north'}} align= "center"> <span style={{color: 'gold'}}> /* </span> Power Your Code: <span style={{color: 'gold'}}> */ </span> </h1>
+
         {this.state.categories.map(category => (
           <div key={category.id}>
             <Grid item xs={12} align='center'>
@@ -77,7 +79,9 @@ function Category(props) {
   }
   const styles = {
     fontSize: 40,
-    fontWeight: "bold"
+    fontWeight: "bold",
+    fontFamily: 'informal',
+    color: 'green'
   }
 
 
@@ -101,7 +105,11 @@ function Category(props) {
 
   return (
     <div id='category' >
-      <p style={styles} onClick={() => onClickHandler()}>{props.category.name}</p>
+      <p style={styles} onClick={() => onClickHandler()}>
+        <span style={{ color: 'purple' , textDecoration: 'none' }}> [ </span>
+        {props.category.name}
+        <span style={{ color: 'purple' , textDecoration: 'none' }}> ] </span>
+      </p>
       <p >{props.category.description}</p>
       <div id='dropdown'>
         {showSubcat ? dropdown : null}
@@ -109,26 +117,5 @@ function Category(props) {
     </div>
   )
 }
-// const Link = React.createClass({
-//   getInitialState: function(){
-//     return {hover: false}
-//   },
-//   toggleHover: function(){
-//     this.setState({hover: !this.state.hover})
-//   },
-//   render: function() {
-//     let linkStyle;
-//     if (this.state.hover) {
-//       linkStyle = {backgroundColor: 'red'}
-//     } else {
-//       linkStyle = {backgroundColor: 'blue'}
-//     }
-//     return(
-//       <div>
-//         <a style={linkStyle} onMouseEnter={this.toggleHover} onMouseLeave={this.toggleHover}>Link</a>
-//       </div>
-//     )
-//   }
-// })
 
 export default AlgosByCategories;

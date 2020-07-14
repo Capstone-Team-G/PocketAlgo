@@ -28,7 +28,7 @@ DataStructurePage(props) {
     }, [])
 
     return (
-        <div>
+        <div style={{backgroundColor: 'black'}}>
             <Header />
             <Grid container spacing={3}>
 
@@ -39,7 +39,7 @@ DataStructurePage(props) {
             </Grid>
                 {/* Image */}
             <Grid item xs={12}>
-            <Paper>
+            <Paper align='center'>
             {/* Place Component Below This Line */}
             {dataStructure.picture !== null &&
                 <img src={dataStructure.picture} />}
@@ -50,7 +50,7 @@ DataStructurePage(props) {
             <Grid item xs={12}>
             <Paper>
             {/* Place Component Below This Line */}
-            <h5 align='center'>Algorithms related to {dataStructure.name}:</h5>
+            <h2 align='center'>Algorithms related to {dataStructure.name}:</h2>
             </Paper>
             </Grid>
 

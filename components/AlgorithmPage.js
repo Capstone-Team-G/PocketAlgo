@@ -6,6 +6,8 @@ import AceEditor from 'react-ace';
 import '../node_modules/ace-builds/src-noconflict/mode-javascript'
 import '../node_modules/ace-builds/src-noconflict/theme-dracula'
 import Animation from './Animation'
+import Header from './material-ui/headertemplate'
+import Footer from './material-ui/footertemplate'
 
 export default function AlgorithmPage(props) {
     const [algorithm, setAlgorithm] = useState({});
@@ -31,10 +33,12 @@ export default function AlgorithmPage(props) {
 
     return (
         <div>
+            <Header />
             <AlgoViewFunction data={algorithm} />
             <Animation pictures={pictures} picturesDescription={picturesDescription} />
             <AceEditor mode="javascript" theme="dracula" value={algorithm.example}
                 fontSize={14} width={`${370}`} height={`${300}`} key={algorithm.id} />
+                <Footer />
         </div>
     )
 }

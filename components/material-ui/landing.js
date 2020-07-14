@@ -7,12 +7,17 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Link from '@material-ui/core/Link';
+import logo1 from '../../public/img/logo1.png';
+import bigData from '../../public/img/bigdata.png';
 
 
 const useStyles = makeStyles((theme) => ({
 
   icon: {
     marginRight: theme.spacing(2),
+  },
+  main: {
+    backgroundImage: {bigData}
   },
   heroContent: {
     backgroundColor: theme.palette.background.paper,
@@ -46,30 +51,33 @@ export default function Landing() {
   const classes = useStyles();
 
   return (
-    <React.Fragment>
+    <React.Fragment >
       <main>
+      {/* style="background: url('./img/bigdata.png') no-repeat center center fixed;" */}
         {/* Hero unit */}
-        <div className={classes.heroContent}>
-          <Container maxWidth="sm">
-            <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
-             Algos On The Go
+        <div className={classes.main}>
+          <Container maxWidth="sm" >
+            <div align='center'>
+            <img src={logo1} height='300' width='300'/>
+            </div>
+            <p align='center' margin='10px'> <span style={{color: 'gold', fontFamily: 'true north' , fontSize: '80px'}}> = </span> </p>
+            <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom style={{ fontStyle: 'italic', fontFamily: 'true north' , fontSize: '80px', fontWeight: 'bold'}}>
+            <span style={{color: 'gold'}}> "</span> Algos, To Go <span style={{color: 'gold'}}> " </span>
             </Typography>
-            <Typography variant="h5" align="center" color="textSecondary" paragraph>
-              Take a quick look at leading industry algorithms and strengthen your understanding!
+            <Typography variant="h5" align="center" color="textSecondary" paragraph style={{fontSize: '50px'}}>
+              Take a quick look at leading industry algorithms, strengthen your knowledge and understanding!
             </Typography>
             <div className={classes.heroButtons}>
               <Grid container spacing={2} justify="center">
+
                 <Grid item>
-                  <Button variant="contained" color="primary">
-                    Algo Of The Day
+                  <Button paddingBottom="20px" variant="contained" color="inherit" style={{ color: 'gold' }}>
+                   <Link href="/quizzes" style={{ color: 'green' , textDecoration: 'none' , fontSize: 60 }}>Take A Quiz </Link>
                   </Button>
-                </Grid>
-                <Grid item>
-                  <Button variant="outlined" color="primary">
-                   <Link href="/quizzes" style={{ textDecoration: 'none' }}>Take A Quiz </Link>
-                  </Button>
+
                 </Grid>
               </Grid>
+              <br></br>
             </div>
           </Container>
         </div>

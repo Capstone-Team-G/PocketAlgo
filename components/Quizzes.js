@@ -45,9 +45,9 @@ class Quizzes extends React.Component {
      linkStyle = {color: '#000'}
    }
     return (
-      <div >
+      <div style={{backgroundColor: 'black'}}>
         <Header />
-        <h1 align='center'>Choose Your Quiz Type:</h1>
+        <h1 align='center' style={{color: 'white'}}>Choose Your Quiz Type:</h1>
         {this.state.categories.map(category => (
           <div key={category.id}>
             <Grid item xs={12} align='center'>
@@ -85,20 +85,25 @@ function Category(props) {
   if (subcategories.length) {
     dropdown = subcategories.map(subcat => (
       <div key={subcat.id}>
-        <p onClick={() => props.history.push(`/datastructures/${subcat.id}`)} >{subcat.name}</p>
+        <h2 onClick={() => props.history.push(`/datastructures/${subcat.id}`)} >{subcat.name}</h2>
       </div>
     ))
   } else {
     dropdown = algorithms.map(algo => (
       <div key={algo.id}>
-        <p onClick={() => props.history.push(`/algorithms/${algo.id}`)} >{algo.name}</p>
+        <h2 onClick={() => props.history.push(`/algorithms/${algo.id}`)} >{algo.name}</h2>
       </div>
     ))
   }
 
   return (
     <div id='category' >
-      <p style={styles} onClick={() => onClickHandler()}>{props.category.name}</p>
+      <h1 style={{ fontSize: 40, fontFamily: 'informal'}} onClick={() => onClickHandler()}>
+      <span style={{ color: 'purple' , textDecoration: 'none' }}> [ </span>
+      {props.category.name}
+      <span style={{ color: 'purple' , textDecoration: 'none' }}> ] </span>
+      </h1>
+
       <p >{props.category.description}</p>
       <div id='dropdown'>
         {showSubcat ? dropdown : null}

@@ -52,7 +52,8 @@ export default function Header () {
   return (
     <React.Fragment>
       <CssBaseline />
-      <AppBar position="relative">
+
+      <AppBar position="relative" style={{backgroundColor: 'green'}}>
         <Toolbar>
           <img src={logo4} height='60px' width='60px' className={classes.icon}/>
 

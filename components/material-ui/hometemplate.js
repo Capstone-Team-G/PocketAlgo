@@ -36,22 +36,28 @@ export default function HomeTemp() {
 {/* Random Algo */}
 <Grid item xs={12}>
   <Paper className={classes.paper}>
-    <h1 align='center'>Random Algo Here</h1>
     {/* Place Component Below This Line */}
+    <h1 align='center' style={{fontFamily: 'informal'}}>View
+    <Link href="/bycategories" style={{ color: 'green' , textDecoration: 'none' }}>
+    <span style={{ color: 'purple' , textDecoration: 'none' }}> [ </span>
+      Random Algo Here
+    <span style={{ color: 'purple' , textDecoration: 'none' }}> ] </span>
+    </Link>
+    </h1>
   </Paper>
 </Grid>
-{/* Algo of The Day */}
-<Grid item xs={12}>
-  <Paper className={classes.paper}>
-    <h1 align='center'>Algo Of The Day Here</h1>
-    {/* Place Component Below This Line */}
-  </Paper>
-</Grid>
-{/* See Categories */}
+
+{/* View Categories */}
 <Grid item xs={12}>
   <Paper className={classes.paper}>
     {/* Place Component Below This Line */}
-    <h1 align='center'><Link href="/bycategories" style={{ textDecoration: 'none' }}>See Categories Here</Link></h1>
+    <h1 align='center' style={{fontFamily: 'informal'}}>View
+    <Link href="/bycategories" style={{ color: 'green' , textDecoration: 'none' }}>
+    <span style={{ color: 'purple' , textDecoration: 'none' }}> [ </span>
+    Categories Here
+    <span style={{ color: 'purple' , textDecoration: 'none' }}> ] </span>
+    </Link>
+    </h1>
   </Paper>
 </Grid>
 </Grid>
