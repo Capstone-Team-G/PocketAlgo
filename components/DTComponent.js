@@ -9,7 +9,7 @@ export default function DataStructurePage(props) {
 
     useEffect(() => {
         const id = props.match.params.id //takes id from url
-        // const id = '30b07844-53a4-4340-ae25-a4e41d4a12ea'//dummy data 
+        // const id = '30b07844-53a4-4340-ae25-a4e41d4a12ea'//dummy data
         async function fetchAPI() {
             try {
                 const apiData = await API.graphql(graphqlOperation(getSubcategories, { id: id }));

@@ -34,11 +34,11 @@ class AlgosByCategories extends React.Component {
         {this.state.categories.map(category => (
           <div key={category.id}>
             <Grid item xs={12} align='center'>
-          <Paper>
-        {/* Place Component Below This Line */}
-          <Category category={category} history={this.props.history} />
-          </Paper>
-          </Grid>
+              <Paper>
+                {/* Place Component Below This Line */}
+                <Category category={category} history={this.props.history} />
+              </Paper>
+            </Grid>
 
           </div>
         ))}
