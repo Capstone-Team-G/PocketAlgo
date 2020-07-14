@@ -51,7 +51,7 @@ export default function HomeTemp() {
 <Grid item xs={12}>
   <Paper className={classes.paper}>
     {/* Place Component Below This Line */}
-    <h1 align='center'><Link href="/bycategories">See Categories Here</Link></h1>
+    <h1 align='center'><Link href="/bycategories" style={{ textDecoration: 'none' }}>See Categories Here</Link></h1>
   </Paper>
 </Grid>
 </Grid>

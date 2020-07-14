@@ -6,13 +6,26 @@ import Footer from './material-ui/footertemplate'
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import { makeStyles } from '@material-ui/core/styles';
+import styled from 'styled-components';
 
+const HoverText = styled.p`
+	color: #000;
+	:hover {
+		color: #ed1212;
+		cursor: pointer;
+	}
+`
 class AlgosByCategories extends React.Component {
   constructor() {
     super();
     this.state = {
-      categories: []
+      categories: [],
+      hover: false
     }
+  }
+
+  toggleHover() {
+    this.setState({hover: !this.state.hover})
   }
 
   async componentDidMount() {
@@ -28,6 +41,12 @@ class AlgosByCategories extends React.Component {
 
 
   render() {
+    var linkStyle;
+   if (this.state.hover) {
+     linkStyle = {color: '#ed1212',cursor: 'pointer'}
+   } else {
+     linkStyle = {color: '#000'}
+   }
     return (
       <div >
         <Header />
@@ -36,12 +55,15 @@ class AlgosByCategories extends React.Component {
             <Grid item xs={12} align='center'>
           <Paper>
         {/* Place Component Below This Line */}
+          <HoverText style={linkStyle} onMouseEnter={this.toggleHover} onMouseLeave={this.toggleHover}>
           <Category category={category} history={this.props.history} />
+          </HoverText>
           </Paper>
           </Grid>
 
           </div>
         ))}
+        {/* <Link /> */}
         <Footer />
       </div>
     );
@@ -66,13 +88,13 @@ function Category(props) {
   if (subcategories.length) {
     dropdown = subcategories.map(subcat => (
       <div key={subcat.id}>
-        <p onClick={() => props.history.push(`/datastructures/${subcat.id}`)} >{subcat.name}</p>
+        <h2 onClick={() => props.history.push(`/datastructures/${subcat.id}`)} >{subcat.name}</h2>
       </div>
     ))
   } else {
     dropdown = algorithms.map(algo => (
       <div key={algo.id}>
-        <p onClick={() => props.history.push(`/algorithms/${algo.id}`)} >{algo.name}</p>
+        <h2 onClick={() => props.history.push(`/algorithms/${algo.id}`)} >{algo.name}</h2>
       </div>
     ))
   }
@@ -87,5 +109,26 @@ function Category(props) {
     </div>
   )
 }
+// const Link = React.createClass({
+//   getInitialState: function(){
+//     return {hover: false}
+//   },
+//   toggleHover: function(){
+//     this.setState({hover: !this.state.hover})
+//   },
+//   render: function() {
+//     let linkStyle;
+//     if (this.state.hover) {
+//       linkStyle = {backgroundColor: 'red'}
+//     } else {
+//       linkStyle = {backgroundColor: 'blue'}
+//     }
+//     return(
+//       <div>
+//         <a style={linkStyle} onMouseEnter={this.toggleHover} onMouseLeave={this.toggleHover}>Link</a>
+//       </div>
+//     )
+//   }
+// })
 
 export default AlgosByCategories;

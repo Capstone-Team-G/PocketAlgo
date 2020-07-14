@@ -4,6 +4,7 @@ import Home from './Home'
 import AlgosByCategories from './AlgosByCategories'
 import AlgorithmPage from './AlgorithmPage';
 import DataStructurePage from './DTComponent';
+import Quizzes from './Quizzes';
 
 
 class Routes extends React.Component {
@@ -14,6 +15,7 @@ class Routes extends React.Component {
         <Route exact path="/bycategories" component={AlgosByCategories} />
         <Route exact path="/algorithms/:id" component={AlgorithmPage} />
         <Route exact path="/datastructures/:id" component={DataStructurePage} />
+        <Route exact path="/quizzes" component={Quizzes} />
       </Switch>
     )
   }

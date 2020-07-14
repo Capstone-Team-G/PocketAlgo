@@ -58,7 +58,7 @@ DataStructurePage(props) {
             <Paper>
             {algorithms.map(algorithm => (
 
-            <p onClick={() => props.history.push(`/algorithms/${algorithm.id}`)} align='center'>{algorithm.name}</p>
+            <p onClick={() => props.history.push(`/algorithms/${algorithm.id}`)} align='center' key={algorithm.id}>{algorithm.name}</p>
 
             ))}
              </Paper>

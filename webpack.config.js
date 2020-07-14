@@ -1,4 +1,5 @@
 const path = require('path');
+const {GenerateSW} = require('workbox-webpack-plugin');
 
 module.exports = {
     mode: 'development',
@@ -32,4 +33,14 @@ module.exports = {
               }
         ]
     },
+    plugins: [
+        // Other plugins...
+        new GenerateSW()
+      ]
 };
+
+new CopyWebpackPlugin({
+    patterns: [
+      { from: path.resolve(__dirname, './public') },
+    ],
+  })
