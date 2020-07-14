@@ -19,6 +19,7 @@ class AlgosByCategories extends React.Component {
     try {
       const apiData = await API.graphql(graphqlOperation(listCategoriess))
       const categories = apiData.data.listCategoriess.items
+      console.log(categories)
       this.setState({ categories })
     } catch (err) {
       console.log('error: ', err)
