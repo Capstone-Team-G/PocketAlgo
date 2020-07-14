@@ -2,8 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { API, graphqlOperation } from 'aws-amplify'
 import { getSubcategories } from '../src/graphql/queries'
 import AlgoViewFunction from './AlgoViewFunction'
+import Grid from '@material-ui/core/Grid';
+import Paper from '@material-ui/core/Paper';
+import Header from './material-ui/headertemplate'
+import Footer from './material-ui/footertemplate'
+export default function
 
-export default function DataStructurePage(props) {
+DataStructurePage(props) {
     const [algorithms, setAlgorithms] = useState([]);
     const [dataStructure, setDataStructure] = useState([]);
 
@@ -23,14 +28,47 @@ export default function DataStructurePage(props) {
     }, [])
 
     return (
-        <div>
+        <div style={{backgroundColor: 'black'}}>
+            <Header />
+            <Grid container spacing={3}>
+
+            <Grid item xs={12}>
+            <Paper>
             <AlgoViewFunction data={dataStructure} />
+            </Paper>
+            </Grid>
+                {/* Image */}
+            <Grid item xs={12}>
+            <Paper align='center'>
+            {/* Place Component Below This Line */}
             {dataStructure.picture !== null &&
                 <img src={dataStructure.picture} />}
-            <h5>Algorithms related to {dataStructure.name}:</h5>
+            </Paper>
+            </Grid>
+
+            {/* Algo Example */}
+            <Grid item xs={12}>
+            <Paper>
+            {/* Place Component Below This Line */}
+            <h2 align='center'>Algorithms related to {dataStructure.name}:</h2>
+            </Paper>
+            </Grid>
+
+            <Grid item xs={12}>
+            <Paper>
             {algorithms.map(algorithm => (
-                <p onClick={() => props.history.push(`/algorithms/${algorithm.id}`)}>{algorithm.name}</p>
+
+            <p onClick={() => props.history.push(`/algorithms/${algorithm.id}`)} align='center' key={algorithm.id}>{algorithm.name}</p>
+
             ))}
+             </Paper>
+            </Grid>
+            </Grid>
+            <Footer />
         </div>
     )
 }
+
+
+
+
