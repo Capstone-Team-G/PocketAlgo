@@ -7,6 +7,8 @@ import history from './history'
 import config from '../src/aws-exports'
 Amplify.configure(config)
 
+navigator.serviceWorker.register('/service-worker.js')
+
 ReactDOM.render(
   <div>
     <Router history={history}>

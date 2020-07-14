@@ -76,7 +76,7 @@ class Home extends React.Component {
   render() {
     console.log('just this', this)
     return (
-      <div >
+      <div style={{backgroundColor: 'black' , background: 'cover'}}>
 
         <Header />
         <br></br>
