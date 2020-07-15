@@ -20,7 +20,7 @@ export default function Animation(props) {
   return (
 
     <div>
-      <div>{props.pictures ? <img src={props.pictures[pointer]} /> : null}</div>
+      <div>{props.pictures ? <img style={{ maxHeight: 400 }} src={props.pictures[pointer]} /> : null}</div>
       <p style={{ fontWeight: 'bold' }}>{props.picturesDescription ? props.picturesDescription[pointer] : null}</p>
       <button id='previous' type='button' onClick={() => {
         prevButtonCheck()

@@ -6,6 +6,8 @@ import AceEditor from 'react-ace';
 import '../node_modules/ace-builds/src-noconflict/mode-javascript'
 import '../node_modules/ace-builds/src-noconflict/theme-dracula'
 import Animation from './Animation'
+import Grid from '@material-ui/core/Grid';
+import Paper from '@material-ui/core/Paper';
 import Header from './material-ui/headertemplate'
 import Footer from './material-ui/footertemplate'
 
@@ -20,7 +22,7 @@ export default function AlgorithmPage(props) {
         async function fetchAPI() {
             try {
                 const apiData = await API.graphql(graphqlOperation(getAlgorithms, { id: id }));
-                console.log(apiData.data.getAlgorithms)
+                // console.log(apiData.data.getAlgorithms)x
                 setAlgorithm(apiData.data.getAlgorithms);
                 setPictures(apiData.data.getAlgorithms.picture);
                 setPicturesDescription(apiData.data.getAlgorithms.pictureDescription);
@@ -32,13 +34,31 @@ export default function AlgorithmPage(props) {
     }, [])
 
     return (
-        <div>
+        <div style={{ backgroundColor: 'black' }}>
             <Header />
-            <AlgoViewFunction data={algorithm} />
-            <Animation pictures={pictures} picturesDescription={picturesDescription} />
-            <AceEditor mode="javascript" theme="dracula" value={algorithm.example}
-                fontSize={14} width={`${370}`} height={`${300}`} key={algorithm.id} />
-                <Footer />
+            <Grid container spacing={3}>
+
+                <Grid>
+                    <Paper align='center' >
+                        <AlgoViewFunction data={algorithm} />
+                    </Paper>
+                </Grid>
+                {/* Animation */}
+                <Grid item xs={12}>
+                    <Paper align='center'>
+                        <Animation pictures={pictures} picturesDescription={picturesDescription} />
+                    </Paper>
+                </Grid>
+                {/* Code Example */}
+                <Grid item xs={12}>
+                    <Paper align='center'>
+                        <AceEditor mode="javascript" theme="dracula" value={algorithm.example}
+                            fontSize={14} key={algorithm.id} />
+                    </Paper>
+                </Grid>
+
+            </Grid>
+            <Footer />
         </div>
     )
 }

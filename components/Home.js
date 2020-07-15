@@ -57,7 +57,7 @@ class Home extends React.Component {
   }
 
   randomOnClickHandler(event) {
-    
+
   }
 
   async onClickHandler(id) {
@@ -76,7 +76,7 @@ class Home extends React.Component {
   render() {
     console.log('just this', this)
     return (
-      <div style={{backgroundColor: 'black' , background: 'cover'}}>
+      <div style={{ backgroundColor: 'black', background: 'cover' }}>
 
         <Header />
         <br></br>

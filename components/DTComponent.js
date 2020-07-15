@@ -8,7 +8,7 @@ import Header from './material-ui/headertemplate'
 import Footer from './material-ui/footertemplate'
 export default function
 
-DataStructurePage(props) {
+    DataStructurePage(props) {
     const [algorithms, setAlgorithms] = useState([]);
     const [dataStructure, setDataStructure] = useState([]);
 
@@ -28,41 +28,41 @@ DataStructurePage(props) {
     }, [])
 
     return (
-        <div style={{backgroundColor: 'black'}}>
+        <div style={{ backgroundColor: 'black' }}>
             <Header />
             <Grid container spacing={3}>
 
-            <Grid item xs={12}>
-            <Paper>
-            <AlgoViewFunction data={dataStructure} />
-            </Paper>
-            </Grid>
+                <Grid item xs={12}>
+                    <Paper>
+                        <AlgoViewFunction data={dataStructure} />
+                    </Paper>
+                </Grid>
                 {/* Image */}
-            <Grid item xs={12}>
-            <Paper align='center'>
-            {/* Place Component Below This Line */}
-            {dataStructure.picture !== null &&
-                <img src={dataStructure.picture} />}
-            </Paper>
-            </Grid>
+                <Grid item xs={12}>
+                    <Paper align='center'>
+                        {/* Place Component Below This Line */}
+                        {dataStructure.picture !== null &&
+                            <img src={dataStructure.picture} />}
+                    </Paper>
+                </Grid>
 
-            {/* Algo Example */}
-            <Grid item xs={12}>
-            <Paper>
-            {/* Place Component Below This Line */}
-            <h2 align='center'>Algorithms related to {dataStructure.name}:</h2>
-            </Paper>
-            </Grid>
+                {/* Algo Example */}
+                <Grid item xs={12}>
+                    <Paper>
+                        {/* Place Component Below This Line */}
+                        <h2 align='center'>Algorithms related to {dataStructure.name}:</h2>
+                    </Paper>
+                </Grid>
 
-            <Grid item xs={12}>
-            <Paper>
-            {algorithms.map(algorithm => (
+                <Grid item xs={12}>
+                    <Paper>
+                        {algorithms.map(algorithm => (
 
-            <p onClick={() => props.history.push(`/algorithms/${algorithm.id}`)} align='center' key={algorithm.id}>{algorithm.name}</p>
+                            <p style={{ cursor: 'pointer' }} onClick={() => props.history.push(`/algorithms/${algorithm.id}`)} align='center' key={algorithm.id}>{algorithm.name}</p>
 
-            ))}
-             </Paper>
-            </Grid>
+                        ))}
+                    </Paper>
+                </Grid>
             </Grid>
             <Footer />
         </div>
