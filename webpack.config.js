@@ -1,5 +1,7 @@
 const path = require('path');
 const {GenerateSW} = require('workbox-webpack-plugin');
+const { InjectManifest } = require('workbox-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     mode: 'development',
@@ -34,13 +36,13 @@ module.exports = {
         ]
     },
     plugins: [
-        // Other plugins...
-        new GenerateSW(),
-        // new CopyWebpackPlugin({
-        //     patterns: [
-        //       { from: path.resolve(__dirname, './public') },
-        //     ],
-        //   })
+            new GenerateSW(),
+            new CopyWebpackPlugin({
+                patterns: [
+                  { from: path.resolve(__dirname, './public') },
+                ],
+              })
+
       ]
 };
 
