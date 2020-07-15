@@ -96,13 +96,13 @@ function Category(props) {
   if (subcategories.length) {
     dropdown = subcategories.map(subcat => (
       <div key={subcat.id}>
-        <h2 onClick={() => props.history.push(`/datastructures/${subcat.id}`)} >{subcat.name}</h2>
+        <h2 onClick={() => props.history.push(`/datastructures/${subcat.id}`)} style={{ fontFamily: 'patronum' , fontSize: 25}}> <span style={{color: 'gold'}}> / </span> {subcat.name} <span style={{color: 'gold'}}> \ </span> </h2>
       </div>
     ))
   } else {
     dropdown = algorithms.map(algo => (
       <div key={algo.id}>
-        <h2 onClick={() => props.history.push(`/algorithms/${algo.id}`)} >{algo.name}</h2>
+        <h2 onClick={() => props.history.push(`/algorithms/${algo.id}`)} style={{ fontFamily: 'patronum' , fontSize: 25}}> <span style={{color: 'gold'}}> / </span> {algo.name} <span style={{color: 'gold'}}> \ </span> </h2>
       </div>
     ))
   }

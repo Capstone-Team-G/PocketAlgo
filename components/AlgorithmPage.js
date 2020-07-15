@@ -6,8 +6,11 @@ import AceEditor from 'react-ace';
 import '../node_modules/ace-builds/src-noconflict/mode-javascript'
 import '../node_modules/ace-builds/src-noconflict/theme-dracula'
 import Animation from './Animation'
-import Header from './material-ui/headertemplate'
 import Footer from './material-ui/footertemplate'
+import AppBar from '@material-ui/core/AppBar';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import Link from '@material-ui/core/Link'
+import Toolbar from '@material-ui/core/Toolbar';
 
 export default function AlgorithmPage(props) {
     const [algorithm, setAlgorithm] = useState({});
@@ -33,7 +36,21 @@ export default function AlgorithmPage(props) {
 
     return (
         <div>
-            <Header />
+            {/* HEADER */}
+            <React.Fragment>
+            <CssBaseline />
+
+            <AppBar position="relative" style={{backgroundColor: 'green'}}>
+            <Toolbar>
+          <img src={`https://oimg.photobucket.com/albums/v636/THASTHATBOY/logo4.png`} height='60px' width='60px' style={{ marginRight: 15}}/>
+
+          <Link href="/" variant="h6" color="inherit" noWrap style={{ textDecoration: 'none' , fontSize: 40}}> PocketAlgo</Link>
+
+            </Toolbar>
+            </AppBar>
+            </React.Fragment>
+            {/* END HEADER */}
+
             <AlgoViewFunction data={algorithm} />
             <Animation pictures={pictures} picturesDescription={picturesDescription} />
             <AceEditor mode="javascript" theme="dracula" value={algorithm.example}

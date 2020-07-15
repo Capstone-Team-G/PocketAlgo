@@ -56,7 +56,7 @@ export default function Landing() {
       {/* style="background: url('./img/bigdata.png') no-repeat center center fixed;" */}
         {/* Hero unit */}
         <div className={classes.main}>
-          <Container maxWidth="sm" style={{background: '../../public/img/bigdata.png'}} >
+          <Container maxWidth="sm" >
             <div align='center'>
             <img src={logo1} height='300' width='300' align='center'/>
             <p align='center' margin='10px'> <span style={{color: 'gold', fontFamily: 'true north' , fontSize: '80px'}}> = </span> </p>
