@@ -57,7 +57,7 @@ export default function Header () {
         <Toolbar>
           <img src={logo4} height='60px' width='60px' className={classes.icon}/>
 
-          <Link href="/" variant="h6" color="inherit" noWrap style={{ textDecoration: 'none' }}> PocketAlgo</Link>
+          <Link href="/" variant="h6" color="inherit" noWrap style={{ textDecoration: 'none' , fontSize: 40}}> PocketAlgo</Link>
 
         </Toolbar>
       </AppBar>

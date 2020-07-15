@@ -7,6 +7,7 @@ import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import { makeStyles } from '@material-ui/core/styles';
 import styled from 'styled-components';
+import StoreLinks from './material-ui/appstorelinks'
 
 const HoverText = styled.p`
 	color: #000;
@@ -51,8 +52,8 @@ class AlgosByCategories extends React.Component {
     return (
       <div style={{backgroundColor: 'black'}}>
         <Header />
-        <h1 style= {{color: 'white', fontFamily: 'true north'}} align= "center"> <span style={{color: 'gold'}}> /* </span> Power Your Code: <span style={{color: 'gold'}}> */ </span> </h1>
-
+        <h1 style= {{color: 'white', fontFamily: 'true north' , fontFamily: 'informal', fontSize: 50}} align= "center"> <span style={{color: 'gold'}}> /* </span> Power Your Code: <span style={{color: 'gold'}}> */ </span> </h1>
+        align='center'
         {this.state.categories.map(category => (
           <div key={category.id}>
             <Grid item xs={12} align='center'>
@@ -66,7 +67,9 @@ class AlgosByCategories extends React.Component {
 
           </div>
         ))}
-        {/* <Link /> */}
+        {/* Store Links */}
+        <StoreLinks />
+
         <Footer />
       </div>
     );
@@ -79,7 +82,7 @@ function Category(props) {
     setShowSubcat(!showSubcat)
   }
   const styles = {
-    fontSize: 40,
+    fontSize: 50,
     fontWeight: "bold",
     fontFamily: 'informal',
     color: 'green'
@@ -107,9 +110,9 @@ function Category(props) {
   return (
     <div id='category' >
       <p style={styles} onClick={() => onClickHandler()}>
-        <span style={{ color: 'purple' , textDecoration: 'none' }}> [ </span>
+        <span style={{ color: 'purple' , textDecoration: 'none' , fontFamily: 'informal', fontSize: 50 }}> [ </span>
         {props.category.name}
-        <span style={{ color: 'purple' , textDecoration: 'none' }}> ] </span>
+        <span style={{ color: 'purple' , textDecoration: 'none', fontFamily: 'informal', fontSize: 50}}> ] </span>
       </p>
       <p >{props.category.description}</p>
       <div id='dropdown'>
