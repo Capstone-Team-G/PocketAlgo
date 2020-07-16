@@ -4,7 +4,6 @@ import { listCategoriess, getSubcategories, listSubcategoriess } from '../src/gr
 import Container from '@material-ui/core/Container';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
-import Header from './material-ui/headertemplate'
 import Footer from './material-ui/footertemplate'
 import styled from 'styled-components';
 
@@ -46,7 +45,6 @@ class Quizzes extends React.Component {
    }
     return (
       <div style={{backgroundColor: 'black'}}>
-        <Header />
         <h1 align='center' style={{color: 'white'}}>Choose Your Quiz Type:</h1>
         {this.state.categories.map(category => (
           <div key={category.id}>

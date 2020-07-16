@@ -9,7 +9,6 @@ import { getSubcategories } from '../src/graphql/queries'
 import AlgoViewFunction from './AlgoViewFunction'
 import Paper from '@material-ui/core/Paper';
 import Footer from './material-ui/footertemplate'
-import Header from './material-ui/headertemplate'
 import logo4 from '../public/img/logo4.png'
 export default function
 
@@ -34,9 +33,7 @@ export default function
 
     return (
         <div style={{ backgroundColor: 'black' }}>
-            <Header />
             <Grid container spacing={3}>
-
                 <Grid item xs={12}>
                     <Paper>
                         <AlgoViewFunction data={dataStructure} />
@@ -50,7 +47,6 @@ export default function
                             <img src={dataStructure.picture} />}
                     </Paper>
                 </Grid>
-
                 {/* Algo Example */}
                 <Grid item xs={12}>
                     <Paper>
@@ -58,13 +54,10 @@ export default function
                         <h3 align='left' style={{ fontFamily: 'copperplate', paddingLeft: 10 }}> <span style={{ color: 'blue', fontFamily: 'true north', fontSize: '10px' }}> const </span> Algorithms related to {dataStructure.name} <span style={{ color: 'gold', fontFamily: 'true north', fontSize: '20px' }}> = </span> </h3>
                     </Paper>
                 </Grid>
-
                 <Grid item xs={12}>
                     <Paper>
                         {algorithms.map(algorithm => (
-
                             <p onClick={() => props.history.push(`/algorithms/${algorithm.id}`)} align='center' key={algorithm.id} style={{ fontFamily: 'patronum', fontWeight: 'bold', fontSize: 25 }}> <span style={{ color: 'gold' }}> / </span> {algorithm.name} <span style={{ color: 'gold' }}> \ </span> </p>
-
                         ))}
                     </Paper>
                 </Grid>

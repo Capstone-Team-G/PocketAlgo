@@ -8,7 +8,6 @@ import '../node_modules/ace-builds/src-noconflict/theme-dracula'
 import Animation from './Animation'
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
-import Header from './material-ui/headertemplate'
 import Footer from './material-ui/footertemplate'
 import AppBar from '@material-ui/core/AppBar';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -39,7 +38,6 @@ export default function AlgorithmPage(props) {
 
     return (
         <div style={{ backgroundColor: 'black' }}>
-            <Header />
             <Grid container spacing={3}>
 
                 <Grid>
