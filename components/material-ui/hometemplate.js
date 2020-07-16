@@ -5,6 +5,8 @@ import Link from '@material-ui/core/Link'
 import { makeStyles } from '@material-ui/core/styles';
 import Landing from './landing'
 import clsx from 'clsx';
+import StoreLinks from '../material-ui/appstorelinks'
+import logo3 from '../../public/img/logo3.png'
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -37,7 +39,7 @@ export default function HomeTemp() {
 <Grid item xs={12}>
   <Paper className={classes.paper}>
     {/* Place Component Below This Line */}
-    <h1 align='center' style={{fontFamily: 'informal'}}>View
+    <h1 align='center' style={{fontFamily: 'informal', fontSize: 50}}>View
     <Link href="/bycategories" style={{ color: 'green' , textDecoration: 'none' }}>
     <span style={{ color: 'purple' , textDecoration: 'none' }}> [ </span>
       Random Algo Here
@@ -51,7 +53,7 @@ export default function HomeTemp() {
 <Grid item xs={12}>
   <Paper className={classes.paper}>
     {/* Place Component Below This Line */}
-    <h1 align='center' style={{fontFamily: 'informal'}}>View
+    <h1 align='center' style={{fontFamily: 'informal', fontSize: 50}}>View
     <Link href="/bycategories" style={{ color: 'green' , textDecoration: 'none' }}>
     <span style={{ color: 'purple' , textDecoration: 'none' }}> [ </span>
     Categories Here
@@ -60,7 +62,12 @@ export default function HomeTemp() {
     </h1>
   </Paper>
 </Grid>
+
+{/* store links */}
+<StoreLinks />
 </Grid>
 </React.Fragment>
   )
 }
+
+//

@@ -1,11 +1,16 @@
 import React, { useState, useEffect } from 'react';
+import AppBar from '@material-ui/core/AppBar';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import Link from '@material-ui/core/Link'
+import Grid from '@material-ui/core/Grid';
+import Toolbar from '@material-ui/core/Toolbar';
 import { API, graphqlOperation } from 'aws-amplify'
 import { getSubcategories } from '../src/graphql/queries'
 import AlgoViewFunction from './AlgoViewFunction'
-import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
-import Header from './material-ui/headertemplate'
 import Footer from './material-ui/footertemplate'
+import Header from './material-ui/headertemplate'
+import logo4 from '../public/img/logo4.png'
 export default function
 
     DataStructurePage(props) {
@@ -50,7 +55,7 @@ export default function
                 <Grid item xs={12}>
                     <Paper>
                         {/* Place Component Below This Line */}
-                        <h2 align='center'>Algorithms related to {dataStructure.name}:</h2>
+                        <h3 align='left' style={{ fontFamily: 'copperplate', paddingLeft: 10 }}> <span style={{ color: 'blue', fontFamily: 'true north', fontSize: '10px' }}> const </span> Algorithms related to {dataStructure.name} <span style={{ color: 'gold', fontFamily: 'true north', fontSize: '20px' }}> = </span> </h3>
                     </Paper>
                 </Grid>
 
@@ -58,7 +63,7 @@ export default function
                     <Paper>
                         {algorithms.map(algorithm => (
 
-                            <p style={{ cursor: 'pointer' }} onClick={() => props.history.push(`/algorithms/${algorithm.id}`)} align='center' key={algorithm.id}>{algorithm.name}</p>
+                            <p onClick={() => props.history.push(`/algorithms/${algorithm.id}`)} align='center' key={algorithm.id} style={{ fontFamily: 'patronum', fontWeight: 'bold', fontSize: 25 }}> <span style={{ color: 'gold' }}> / </span> {algorithm.name} <span style={{ color: 'gold' }}> \ </span> </p>
 
                         ))}
                     </Paper>
