@@ -217,6 +217,9 @@ define("./service-worker.js",['./workbox-64f1e998'], function (workbox) { 'use s
   }, {
     "url": "maskable_icon.png",
     "revision": "b0163391f625867d85faa4b728539e77"
+  }, {
+    "url": "workbox-abaa1409.js",
+    "revision": "592a3908afa87533dc7d00ecf4c70609"
   }], {});
 
 });

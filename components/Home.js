@@ -12,7 +12,7 @@ import CardContent from '@material-ui/core/CardContent';
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 
-import Header from './material-ui/headertemplate'
+
 import Footer from './material-ui/footertemplate'
 import HomeTemp from './material-ui/hometemplate'
 import Seedrandom from 'seedrandom'
@@ -77,26 +77,12 @@ class Home extends React.Component {
     console.log('just this', this)
     return (
       <div style={{ backgroundColor: 'black', background: 'cover' }}>
-
-        <Header />
-        <br></br>
         <HomeTemp />
-
         <br></br>
-
         {/* Footer */}
         <br></br>
         <Footer />
         {/* End footer */}
-
-        {/* {this.state.categories.map(rest => (
-          <div key={rest.id}>
-            <p onClick={() => this.onClickHandler(rest.id)}>{rest.name}</p>
-            <p >{rest.description}</p>
-          </div>
-        ))} */}
-
-
       </div>
     );
   }

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { API, graphqlOperation } from 'aws-amplify'
 import { listCategoriess } from '../src/graphql/queries'
-import Header from './material-ui/headertemplate'
 import Footer from './material-ui/footertemplate'
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
@@ -51,7 +50,6 @@ class AlgosByCategories extends React.Component {
    }
     return (
       <div style={{backgroundColor: 'black'}}>
-        <Header />
         <h1 style= {{color: 'white', fontFamily: 'true north' , fontFamily: 'informal', fontSize: 50}} align= "center"> <span style={{color: 'gold'}}> /* </span> Power Your Code: <span style={{color: 'gold'}}> */ </span> </h1>
         align='center'
         {this.state.categories.map(category => (
@@ -64,7 +62,6 @@ class AlgosByCategories extends React.Component {
           </HoverText>
           </Paper>
           </Grid>
-
           </div>
         ))}
         {/* Store Links */}
