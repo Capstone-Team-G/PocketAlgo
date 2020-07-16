@@ -9,10 +9,11 @@ import { getSubcategories } from '../src/graphql/queries'
 import AlgoViewFunction from './AlgoViewFunction'
 import Paper from '@material-ui/core/Paper';
 import Footer from './material-ui/footertemplate'
+import Header from './material-ui/headertemplate'
 import logo4 from '../public/img/logo4.png'
 export default function
 
-DataStructurePage(props) {
+    DataStructurePage(props) {
     const [algorithms, setAlgorithms] = useState([]);
     const [dataStructure, setDataStructure] = useState([]);
 
@@ -32,55 +33,41 @@ DataStructurePage(props) {
     }, [])
 
     return (
-        <div style={{backgroundColor: 'black'}}>
-            {/* HEADER */}
-            <React.Fragment>
-            <CssBaseline />
-
-            <AppBar position="relative" style={{backgroundColor: 'green'}}>
-            <Toolbar>
-          <img src={`https://oimg.photobucket.com/albums/v636/THASTHATBOY/logo4.png`} height='60px' width='60px' style={{ marginRight: 15}}/>
-
-          <Link href="/" variant="h6" color="inherit" noWrap style={{ textDecoration: 'none' , fontSize: 40}}> PocketAlgo</Link>
-
-            </Toolbar>
-            </AppBar>
-            </React.Fragment>
-            {/* END HEADER */}
-
+        <div style={{ backgroundColor: 'black' }}>
+            <Header />
             <Grid container spacing={3}>
 
-            <Grid item xs={12}>
-            <Paper>
-            <AlgoViewFunction data={dataStructure} />
-            </Paper>
-            </Grid>
+                <Grid item xs={12}>
+                    <Paper>
+                        <AlgoViewFunction data={dataStructure} />
+                    </Paper>
+                </Grid>
                 {/* Image */}
-            <Grid item xs={12}>
-            <Paper align='center'>
-            {/* Place Component Below This Line */}
-            {dataStructure.picture !== null &&
-                <img src={dataStructure.picture} />}
-            </Paper>
-            </Grid>
+                <Grid item xs={12}>
+                    <Paper align='center'>
+                        {/* Place Component Below This Line */}
+                        {dataStructure.picture !== null &&
+                            <img src={dataStructure.picture} />}
+                    </Paper>
+                </Grid>
 
-            {/* Algo Example */}
-            <Grid item xs={12}>
-            <Paper>
-            {/* Place Component Below This Line */}
-            <h3 align='left' style={{fontFamily: 'copperplate', paddingLeft: 10}}> <span style={{color: 'blue', fontFamily: 'true north' , fontSize: '10px'}}> const </span> Algorithms related to {dataStructure.name} <span style={{color: 'gold', fontFamily: 'true north' , fontSize: '20px'}}> = </span> </h3>
-            </Paper>
-            </Grid>
+                {/* Algo Example */}
+                <Grid item xs={12}>
+                    <Paper>
+                        {/* Place Component Below This Line */}
+                        <h3 align='left' style={{ fontFamily: 'copperplate', paddingLeft: 10 }}> <span style={{ color: 'blue', fontFamily: 'true north', fontSize: '10px' }}> const </span> Algorithms related to {dataStructure.name} <span style={{ color: 'gold', fontFamily: 'true north', fontSize: '20px' }}> = </span> </h3>
+                    </Paper>
+                </Grid>
 
-            <Grid item xs={12}>
-            <Paper>
-            {algorithms.map(algorithm => (
+                <Grid item xs={12}>
+                    <Paper>
+                        {algorithms.map(algorithm => (
 
-            <p onClick={() => props.history.push(`/algorithms/${algorithm.id}`)} align='center' key={algorithm.id} style={{ fontFamily: 'patronum' , fontWeight: 'bold', fontSize: 25}}> <span style={{color: 'gold'}}> / </span> {algorithm.name} <span style={{color: 'gold'}}> \ </span> </p>
+                            <p onClick={() => props.history.push(`/algorithms/${algorithm.id}`)} align='center' key={algorithm.id} style={{ fontFamily: 'patronum', fontWeight: 'bold', fontSize: 25 }}> <span style={{ color: 'gold' }}> / </span> {algorithm.name} <span style={{ color: 'gold' }}> \ </span> </p>
 
-            ))}
-             </Paper>
-            </Grid>
+                        ))}
+                    </Paper>
+                </Grid>
             </Grid>
             <Footer />
         </div>

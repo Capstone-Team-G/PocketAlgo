@@ -46,16 +46,16 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Header () {
+export default function Header() {
   const classes = useStyles();
 
   return (
     <React.Fragment>
       <CssBaseline />
 
-      <AppBar position="relative" style={{backgroundColor: 'green'}}>
+      <AppBar position="relative" style={{ backgroundColor: 'green' }}>
         <Toolbar>
-          <img src={logo4} height='60px' width='60px' className={classes.icon}/>
+          <img src='https://pocket-algo-pics.s3.amazonaws.com/logo4.png' height='60px' width='60px' className={classes.icon} />
 
           <Link href="/" variant="h6" color="inherit" noWrap style={{ textDecoration: 'none' , fontSize: 40}}> PocketAlgo</Link>
 
