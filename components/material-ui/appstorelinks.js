@@ -12,6 +12,7 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     overflow: 'auto',
     flexDirection: 'column',
+    align: 'center'
   },
   fixedHeight: {
     height: 240,
@@ -30,13 +31,13 @@ export default function StoreLinks() {
 <Grid item xs={12}>
   <Paper className={classes.paper}>
     {/* Place Component Below This Line */}
-    <div style={{width : 454}} align='center'>
+    <div align='center'>
     <h1 align='center' style={{fontFamily: 'informal'}}>
-    <img src={logo3} height='80' width='80' align='center'/>
-    <span style={{color: 'gold', fontFamily: 'true north' , fontSize: '60px', paddingLeft: 20, paddingTop: 10, paddingRight: 20}}> ? </span>
-    <img src={`https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F1a%2F49%2F22%2F1a49226d155846acb790eeb919f63c8e.jpg&f=1&nofb=1`} height='80' width='80' align='center'/>
-    <span style={{color: 'gold', fontFamily: 'true north' , fontSize: '60px', paddingLeft: 20, paddingTop: 10}}> : </span>
-    <img src={`https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimageog.flaticon.com%2Ficons%2Fpng%2F512%2F37%2F37150.png%3Fsize%3D1200x630f%26pad%3D10%2C10%2C10%2C10%26ext%3Dpng%26bg%3DFFFFFFFF&f=1&nofb=1`} height='80' width='120' align='center' style={{paddingbottom: 20}}/>
+    <img src={logo3} height='70' width='70' align='center'/>
+    <span style={{color: 'gold', fontFamily: 'true north' , fontSize: '50px', paddingLeft: 20, paddingTop: 10, paddingRight: 20}}> ? </span>
+    <img src={`https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F1a%2F49%2F22%2F1a49226d155846acb790eeb919f63c8e.jpg&f=1&nofb=1`} height='70' width='70' align='center'/>
+    <span style={{color: 'gold', fontFamily: 'true north' , fontSize: '50px', paddingLeft: 20, paddingTop: 10}}> : </span>
+    <img src={`https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimageog.flaticon.com%2Ficons%2Fpng%2F512%2F37%2F37150.png%3Fsize%3D1200x630f%26pad%3D10%2C10%2C10%2C10%26ext%3Dpng%26bg%3DFFFFFFFF&f=1&nofb=1`} height='70' width='100' align='center' style={{paddingbottom: 20}}/>
     </h1>
     </div>
   </Paper>
