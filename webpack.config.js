@@ -11,6 +11,7 @@ module.exports = {
         filename: 'bundle.js',
         path: path.resolve(__dirname, 'public')
     },
+    devtool: 'source-map',
     resolve: {
         mainFields: ['browser', 'main', 'module'],
         extensions: ['.js', '.jsx']
