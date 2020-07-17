@@ -30,7 +30,7 @@ export default function StoreLinks() {
 <Grid item xs={12}>
   <Paper className={classes.paper}>
     {/* Place Component Below This Line */}
-    <div style={{width : 454}}>
+    <div style={{width : 454}} align='center'>
     <h1 align='center' style={{fontFamily: 'informal'}}>
     <img src={logo3} height='80' width='80' align='center'/>
     <span style={{color: 'gold', fontFamily: 'true north' , fontSize: '60px', paddingLeft: 20, paddingTop: 10, paddingRight: 20}}> ? </span>

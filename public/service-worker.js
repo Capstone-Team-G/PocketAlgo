@@ -113,6 +113,9 @@ define("./service-worker.js",['./workbox-64f1e998'], function (workbox) { 'use s
     "url": "241fddcdeb225255d8f37267a285d009.png",
     "revision": "e4e6242772ed19e5a37ef84f6b162534"
   }, {
+    "url": "31d6cfe0d16ae931b73c59d7e0c089c0.png",
+    "revision": "d41d8cd98f00b204e9800998ecf8427e"
+  }, {
     "url": "34e75c410bcbc517114ac5a70460e33d.png",
     "revision": "d27da066840881240d9e7e4f48c05bfa"
   }, {

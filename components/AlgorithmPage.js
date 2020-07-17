@@ -58,7 +58,7 @@ export default function AlgorithmPage(props) {
           <Grid item xs={12} align='center'>
           <Paper>
             <AceEditor mode="javascript" theme="dracula" value={algorithm.example}
-                fontSize={14} width={`${370}`} height={`${300}`} key={algorithm.id} />
+                fontSize={14} key={algorithm.id} />
                  </Paper>
           </Grid>
                 <Footer />
