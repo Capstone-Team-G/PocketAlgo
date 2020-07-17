@@ -1,23 +1,18 @@
-import React from 'react';
-import { API, graphqlOperation } from 'aws-amplify'
-import { listCategoriess, listAlgorithmss, listSubcategoriess } from '../src/graphql/queries'
-import Landing from './material-ui/landing'
+import React, { lazy, Suspense } from "react";
+import { API, graphqlOperation } from "aws-amplify";
+import {
+  listCategoriess,
+  listAlgorithmss,
+  listSubcategoriess,
+} from "../src/graphql/queries";
+import Seedrandom from "seedrandom";
 
-import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
-import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-// import CardMedia from '@material-ui/core/CardMedia';
-import Container from '@material-ui/core/Container';
-import Grid from '@material-ui/core/Grid';
+// import Footer from './material-ui/footertemplate'
+// import HomeTemp from './material-ui/hometemplate'
 
-
-import Footer from './material-ui/footertemplate'
-import HomeTemp from './material-ui/hometemplate'
-import Seedrandom from 'seedrandom'
-
-
+const renderLoader = () => <p>Loading</p>;
+const HomeTemp = lazy(() => import("./material-ui/hometemplate"));
+const Footer = lazy(() => import("./material-ui/footertemplate"));
 
 class Home extends React.Component {
   constructor() {
@@ -25,21 +20,25 @@ class Home extends React.Component {
     this.state = {
       categories: [],
       algorithms: {},
-      dayAlgo: {}
-    }
+      dayAlgo: {},
+    };
   }
 
   async componentDidMount() {
     try {
       const apiData = await API.graphql(graphqlOperation(listCategoriess));
       const apiAlgos = await API.graphql(graphqlOperation(listAlgorithmss));
-      console.log('restics', apiAlgos);
+      console.log("restics", apiAlgos);
       const categories = apiData.data.listCategoriess.items;
       const algorithms = apiAlgos.data.listAlgorithmss.items;
-      this.setState({ categories: categories, dayAlgo: this.randomizerDaily(algorithms), algorithms: algorithms });
+      this.setState({
+        categories: categories,
+        dayAlgo: this.randomizerDaily(algorithms),
+        algorithms: algorithms,
+      });
       console.log(this.state);
     } catch (err) {
-      console.log('error: ', err);
+      console.log("error: ", err);
     }
   }
 
@@ -56,33 +55,31 @@ class Home extends React.Component {
     return arr[index].id;
   }
 
-  randomOnClickHandler(event) {
-
-  }
+  randomOnClickHandler(event) {}
 
   async onClickHandler(id) {
-    const apiData = await API.graphql(graphqlOperation(listSubcategoriess, {
-      filter: {
-        categoriesID: {
-          eq: id
-        }
-      }
-    }
-    ))
-    console.log('SUBCATEGORY', apiData);
-
+    const apiData = await API.graphql(
+      graphqlOperation(listSubcategoriess, {
+        filter: {
+          categoriesID: {
+            eq: id,
+          },
+        },
+      })
+    );
+    console.log("SUBCATEGORY", apiData);
   }
 
   render() {
-    console.log('just this', this)
+    console.log("just this", this);
     return (
-      <div style={{ backgroundColor: 'black', background: 'cover' }}>
-        <HomeTemp />
-        <br></br>
-        {/* Footer */}
-        <br></br>
-        <Footer />
-        {/* End footer */}
+      <div style={{ backgroundColor: "black", background: "cover" }}>
+        <Suspense fallback={renderLoader()}>
+          <HomeTemp />
+          <br></br>
+          <br></br>
+          <Footer />
+        </Suspense>
       </div>
     );
   }

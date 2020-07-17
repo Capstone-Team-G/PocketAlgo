@@ -1,15 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import AppBar from '@material-ui/core/AppBar';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import Link from '@material-ui/core/Link'
 import Grid from '@material-ui/core/Grid';
-import Toolbar from '@material-ui/core/Toolbar';
 import { API, graphqlOperation } from 'aws-amplify'
 import { getSubcategories } from '../src/graphql/queries'
 import AlgoViewFunction from './AlgoViewFunction'
 import Paper from '@material-ui/core/Paper';
 import Footer from './material-ui/footertemplate'
-import logo4 from '../public/img/logo4.png'
 export default function
 
     DataStructurePage(props) {

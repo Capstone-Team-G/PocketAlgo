@@ -9,10 +9,6 @@ import Animation from './Animation'
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import Footer from './material-ui/footertemplate'
-import AppBar from '@material-ui/core/AppBar';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import Link from '@material-ui/core/Link'
-import Toolbar from '@material-ui/core/Toolbar';
 
 export default function AlgorithmPage(props) {
     const [algorithm, setAlgorithm] = useState({});
