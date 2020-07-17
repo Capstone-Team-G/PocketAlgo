@@ -21,7 +21,8 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
-export default function HomeTemp() {
+export default function HomeTemp(props) {
+  // console.log('propppssss', props)
   const classes = useStyles();
 
   const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
@@ -32,20 +33,22 @@ export default function HomeTemp() {
 <Grid item xs={12}>
   <Paper className={classes.paper}>
     {/* Place Component Below This Line */}
-    <Landing />
+    <Landing state={props.state} history={props.history}/>
   </Paper>
 </Grid>
 {/* Random Algo */}
 <Grid item xs={12}>
   <Paper className={classes.paper}>
     {/* Place Component Below This Line */}
-    <h1 align='center' style={{fontFamily: 'informal', fontSize: 50}}>View
+
+    <h1 align='center' style={{fontFamily: 'informal', fontSize: 45}}>View <br></br>
     <Link href="/bycategories" style={{ color: 'green' , textDecoration: 'none' }}>
     <span style={{ color: 'purple' , textDecoration: 'none' }}> [ </span>
-      Random Algo Here
+      Random Algo
     <span style={{ color: 'purple' , textDecoration: 'none' }}> ] </span>
     </Link>
     </h1>
+
   </Paper>
 </Grid>
 
@@ -53,13 +56,15 @@ export default function HomeTemp() {
 <Grid item xs={12}>
   <Paper className={classes.paper}>
     {/* Place Component Below This Line */}
-    <h1 align='center' style={{fontFamily: 'informal', fontSize: 50}}>View
+
+    <h1 align='center' style={{fontFamily: 'informal', fontSize: 45}}>View <br></br>
     <Link href="/bycategories" style={{ color: 'green' , textDecoration: 'none' }}>
     <span style={{ color: 'purple' , textDecoration: 'none' }}> [ </span>
     Categories Here
     <span style={{ color: 'purple' , textDecoration: 'none' }}> ] </span>
     </Link>
     </h1>
+
   </Paper>
 </Grid>
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Route }from 'react-router-dom'
 import AppBar from '@material-ui/core/AppBar';
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
@@ -9,6 +10,7 @@ import Container from '@material-ui/core/Container';
 import Link from '@material-ui/core/Link';
 import logo1 from '../../public/img/logo1.png';
 import bigData from '../../public/img/bigdata.png';
+import AlgorithmPage from '../AlgorithmPage'
 
 
 const useStyles = makeStyles((theme) => ({
@@ -47,7 +49,10 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Landing() {
+export default function Landing(props) {
+
+  // let algoId = props.algoId;
+  console.log('Success', props)
   const classes = useStyles();
 
   return (
@@ -56,9 +61,10 @@ export default function Landing() {
       {/* style="background: url('./img/bigdata.png') no-repeat center center fixed;" */}
         {/* Hero unit */}
         <div className={classes.main}>
-          <Container maxWidth="sm" >
+
+          <Container maxWidth="sm" image='../../public/img/bigdata.png'>
             <div align='center'>
-            <img src={logo1} height='300' width='300' align='center'/>
+            <img src={logo1} height='250' width='300' align='center'/>
             <p align='center' margin='10px'> <span style={{color: 'gold', fontFamily: 'true north' , fontSize: '80px'}}> = </span> </p>
             <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom style={{ fontStyle: 'italic', fontFamily: 'true north' , fontSize: '50px', fontWeight: 'bold'}}>
             <span style={{color: 'gold'}}> "</span> Algos, To Go <span style={{color: 'gold'}}> " </span>
@@ -72,8 +78,8 @@ export default function Landing() {
               <Grid container spacing={2} justify="center">
 
                 <Grid item>
-                  <Button paddingbottom="20px" variant="contained" color="inherit" style={{ color: 'gold' }}>
-                   <Link href="/quizzes" style={{ color: 'green' , textDecoration: 'none' , fontSize: 60 }}>Take A Quiz </Link>
+                  <Button paddingbottom="20px" variant="outlined" color="inherit" style={{ color: 'green' ,  fontSize: 40 , textDecoration: 'none'}}>
+                   <div onClick={() => props.history.push(`/algorithms/${props.state.dayAlgo.id}`)}> Algo Of The Day </div>
                   </Button>
 
                 </Grid>
@@ -88,7 +94,7 @@ export default function Landing() {
     </React.Fragment>
   );
 }
-
+// onClick={() => props.state.dayAlgo.id ? <Route exact path={`/algorithms/${props.state.dayAlgo.id}`}/> : <h1>Loading... </h1>
 /* <Container className={classes.cardGrid} maxWidth="md">
 
           <Grid container spacing={4}>

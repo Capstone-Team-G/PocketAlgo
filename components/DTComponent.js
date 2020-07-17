@@ -9,6 +9,7 @@ import { getSubcategories } from '../src/graphql/queries'
 import AlgoViewFunction from './AlgoViewFunction'
 import Paper from '@material-ui/core/Paper';
 import Footer from './material-ui/footertemplate'
+import MobileHeader from './material-ui/mobileHeaderTemp'
 import logo4 from '../public/img/logo4.png'
 export default function
 
@@ -33,20 +34,7 @@ DataStructurePage(props) {
 
     return (
         <div style={{backgroundColor: 'black'}}>
-            {/* HEADER */}
-            <React.Fragment>
-            <CssBaseline />
-
-            <AppBar position="relative" style={{backgroundColor: 'green'}}>
-            <Toolbar>
-          <img src={`https://oimg.photobucket.com/albums/v636/THASTHATBOY/logo4.png`} height='60px' width='60px' style={{ marginRight: 15}}/>
-
-          <Link href="/" variant="h6" color="inherit" noWrap style={{ textDecoration: 'none' , fontSize: 40}}> PocketAlgo</Link>
-
-            </Toolbar>
-            </AppBar>
-            </React.Fragment>
-            {/* END HEADER */}
+           <MobileHeader />
 
             <Grid container spacing={3}>
 
@@ -59,8 +47,10 @@ DataStructurePage(props) {
             <Grid item xs={12}>
             <Paper align='center'>
             {/* Place Component Below This Line */}
+            <div>
             {dataStructure.picture !== null &&
-                <img src={dataStructure.picture} />}
+                <img src={dataStructure.picture} style={{ width: 425}}/>}
+                </div>
             </Paper>
             </Grid>
 

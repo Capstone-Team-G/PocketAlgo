@@ -109,12 +109,12 @@ function Category(props) {
 
   return (
     <div id='category' >
-      <p style={styles} onClick={() => onClickHandler()}>
+      <div style={styles} onClick={() => onClickHandler()}>
         <span style={{ color: 'purple' , textDecoration: 'none' , fontFamily: 'informal', fontSize: 50 }}> [ </span>
         {props.category.name}
         <span style={{ color: 'purple' , textDecoration: 'none', fontFamily: 'informal', fontSize: 50}}> ] </span>
-      </p>
-      <p >{props.category.description}</p>
+      </div>
+      <p>{props.category.description}</p>
       <div id='dropdown'>
         {showSubcat ? dropdown : null}
       </div>

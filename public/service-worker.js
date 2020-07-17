@@ -108,13 +108,28 @@ define("./service-worker.js",['./workbox-64f1e998'], function (workbox) { 'use s
 
   workbox.precacheAndRoute([{
     "url": ".DS_Store",
-    "revision": "d19f97c722b4dcac1e0ecb0471e5155e"
+    "revision": "f6c620a62616bb11fb5c8f4b48f68574"
+  }, {
+    "url": "241fddcdeb225255d8f37267a285d009.png",
+    "revision": "e4e6242772ed19e5a37ef84f6b162534"
+  }, {
+    "url": "34e75c410bcbc517114ac5a70460e33d.png",
+    "revision": "d27da066840881240d9e7e4f48c05bfa"
+  }, {
+    "url": "4c846021d268fedb398420dd33ac1397.png",
+    "revision": "c1b3ec490e31f66f782fab4c155454cf"
   }, {
     "url": "59b87e45cc912525b7f4b61b71d4eb7c.png",
     "revision": "fe1cb33e3f893257a84a206b127b3df6"
   }, {
+    "url": "8474a721b39dbc1336ec0288cf832e90.png",
+    "revision": "188de43eb4d75f1f87a0718b7d5169db"
+  }, {
     "url": "8e393318935f715f3d2a03c42ceb408b.png",
     "revision": "da2f37997908c3be37f9cce2eadf1ce2"
+  }, {
+    "url": "9a4693a2607a9161a890a022537178fc.png",
+    "revision": "ea5157645671d89858a986094916ac1b"
   }, {
     "url": "PA_maskable_icon.png",
     "revision": "b0163391f625867d85faa4b728539e77"
@@ -185,14 +200,38 @@ define("./service-worker.js",['./workbox-64f1e998'], function (workbox) { 'use s
     "url": "d6ceab0bd96f9f6fb50fb65a146b33ff.png",
     "revision": "86ddf3ff5bb0818c85dca0a8e4208643"
   }, {
+    "url": "da5fc8a4d6b16885ebada6ec12867fa2.png",
+    "revision": "a8662c90d1ed5b369ccf31e19aaef881"
+  }, {
+    "url": "dc0f7dece949fca6194f6c9dd088259c.png",
+    "revision": "2ddcb638a79950c63ddc1f7a4f4c7334"
+  }, {
+    "url": "f88bb3465d39c4ba87e0d7952ddba0f3.png",
+    "revision": "d4b9fd4a445e6a97d649668c3607628c"
+  }, {
     "url": "f9f16284917c14d6a24a64a337c65e2f.png",
     "revision": "e512ef2290266a0436ac686fbc541778"
   }, {
     "url": "img/.DS_Store",
-    "revision": "310702bf5eb609490634e3eb2b67043c"
+    "revision": "aa43c104295cf68f5701cd15a254d476"
+  }, {
+    "url": "img/About.png",
+    "revision": "e4e6242772ed19e5a37ef84f6b162534"
+  }, {
+    "url": "img/AboutUs.png",
+    "revision": "e4e6242772ed19e5a37ef84f6b162534"
+  }, {
+    "url": "img/AlgoOfTheDay.png",
+    "revision": "c1b3ec490e31f66f782fab4c155454cf"
   }, {
     "url": "img/Algotree.jpg",
     "revision": "551426e11179a105b7f63628fc53d9d8"
+  }, {
+    "url": "img/Categories.png",
+    "revision": "d4b9fd4a445e6a97d649668c3607628c"
+  }, {
+    "url": "img/Home.png",
+    "revision": "188de43eb4d75f1f87a0718b7d5169db"
   }, {
     "url": "img/bigdata.png",
     "revision": "91c5e9936b7af7b13ba107103084b2ad"
@@ -210,13 +249,16 @@ define("./service-worker.js",['./workbox-64f1e998'], function (workbox) { 'use s
     "revision": "da2f37997908c3be37f9cce2eadf1ce2"
   }, {
     "url": "index.html",
-    "revision": "944b185e33ef8ea3e259c9ba5b0753ba"
+    "revision": "307e7ff60c7c8817f0b1f52519fe1227"
   }, {
     "url": "manifest.json",
     "revision": "be487262de6a94ada8775ee0feb0219a"
   }, {
     "url": "maskable_icon.png",
     "revision": "b0163391f625867d85faa4b728539e77"
+  }, {
+    "url": "style.css",
+    "revision": "6deea1ef6e5b214b3fb3c5e4ac6e36e2"
   }], {});
 
 });

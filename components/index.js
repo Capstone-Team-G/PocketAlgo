@@ -6,6 +6,12 @@ import App from './App';
 import history from './history'
 import config from '../src/aws-exports'
 Amplify.configure(config)
+import {
+  BrowserView,
+  MobileView,
+  isBrowser,
+  isMobile
+} from "react-device-detect";
 
 // navigator.serviceWorker.register('../public/service-worker.js')
 
@@ -20,11 +26,14 @@ if ('serviceWorker' in navigator) {
   });
 }
 
+
 ReactDOM.render(
   <div>
+    <MobileView />
     <Router history={history}>
       <App />
     </Router>
+    <MobileView />
   </div>,
   document.getElementById('root')
 );

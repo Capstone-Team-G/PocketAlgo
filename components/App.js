@@ -11,9 +11,13 @@ const App = () => {
   return (
     <div>
       {/* <Navbar /> */}
-
+      {
+      isMobile ?
+    <MobileView>
       <Routes />
-
+      </MobileView>
+  : <Routes />
+      }
     </div>
   )
 }

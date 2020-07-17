@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Button from '@material-ui/core/Button';
 
 export default function Animation(props) {
   const [pointer, setPointer] = useState(0)
@@ -19,13 +20,28 @@ export default function Animation(props) {
 
   return (
 
-    <div>
-      <div>{props.pictures ? <img src={props.pictures[pointer]} /> : null}</div>
+    <div align='center'>
+      <div>{props.pictures ? <img src={props.pictures[pointer]} style={{paddingTop: 20 , width: 425}}/> : null}</div>
       <p style={{ fontWeight: 'bold' }}>{props.picturesDescription ? props.picturesDescription[pointer] : null}</p>
+
+      {/* <Button id='previous' onClick={() => {
+        prevButtonCheck()
+        setPointer(pointer - 1);
+      }} variant="outlined" color="inherit" style={{ color: 'green' ,  fontSize: 20 , textDecoration: 'none', paddingbottom: 10}}>
+                   PREVIOUS
+                  </Button> */}
+
       <button id='previous' type='button' onClick={() => {
         prevButtonCheck()
         setPointer(pointer - 1);
       }}>PREVIOUS</button>
+
+      {/* <Button id='previous' onClick={() => {
+        nextButtonCheck()
+        setPointer(pointer + 1);
+      }} variant="outlined" color="inherit" style={{ color: 'green' ,  fontSize: 20 , textDecoration: 'none' , paddingbottom: 10}}>
+                   NEXT
+                  </Button> */}
 
       <button id='next' type='button' onClick={() => {
         nextButtonCheck()
@@ -34,3 +50,5 @@ export default function Animation(props) {
     </div>
   )
 }
+
+// style={{paddingbottom: 20 }}

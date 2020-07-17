@@ -11,6 +11,17 @@ import AppBar from '@material-ui/core/AppBar';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Link from '@material-ui/core/Link'
 import Toolbar from '@material-ui/core/Toolbar';
+import Header from './material-ui/headertemplate';
+import MobileHeader from './material-ui/mobileHeaderTemp'
+import Grid from '@material-ui/core/Grid';
+import Paper from '@material-ui/core/Paper';
+
+import {
+    BrowserView,
+    MobileView,
+    isBrowser,
+    isMobile
+  } from "react-device-detect";
 
 export default function AlgorithmPage(props) {
     const [algorithm, setAlgorithm] = useState({});
@@ -35,26 +46,21 @@ export default function AlgorithmPage(props) {
     }, [])
 
     return (
-        <div>
-            {/* HEADER */}
-            <React.Fragment>
-            <CssBaseline />
-
-            <AppBar position="relative" style={{backgroundColor: 'green'}}>
-            <Toolbar>
-          <img src={`https://oimg.photobucket.com/albums/v636/THASTHATBOY/logo4.png`} height='60px' width='60px' style={{ marginRight: 15}}/>
-
-          <Link href="/" variant="h6" color="inherit" noWrap style={{ textDecoration: 'none' , fontSize: 40}}> PocketAlgo</Link>
-
-            </Toolbar>
-            </AppBar>
-            </React.Fragment>
-            {/* END HEADER */}
+        <div style={{backgroundColor: 'black'}}>
+           <MobileHeader />
 
             <AlgoViewFunction data={algorithm} />
+            <Grid item xs={12} align='center'>
+          <Paper>
             <Animation pictures={pictures} picturesDescription={picturesDescription} />
+            </Paper>
+          </Grid>
+          <Grid item xs={12} align='center'>
+          <Paper>
             <AceEditor mode="javascript" theme="dracula" value={algorithm.example}
                 fontSize={14} width={`${370}`} height={`${300}`} key={algorithm.id} />
+                 </Paper>
+          </Grid>
                 <Footer />
         </div>
     )
