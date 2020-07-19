@@ -56,18 +56,18 @@ const menuItems = [
   {
     listIcon: <img src={'https://oimg.photobucket.com/albums/v636/THASTHATBOY/4c846021d268fedb398420dd33ac1397.png'} height='350px' width='350px'/>,
     // listText: "Algo",
-    // listPath: <div onClick={() => props.history.push(`/algorithms/${props.state.dayAlgo.id}`)}></div>
+    // listPath: "/algorithms"
   },
   {
     listIcon: <img src={'https://oimg.photobucket.com/albums/v636/THASTHATBOY/f88bb3465d39c4ba87e0d7952ddba0f3.png'} height='350px' width='350px'/>,
     // listText: "Categories",
     listPath: "/bycategories"
-  },
-  {
-    listIcon: <img src={'https://oimg.photobucket.com/albums/v636/THASTHATBOY/241fddcdeb225255d8f37267a285d009.png'} height='350px' width='350px'/>,
-    // listText: "Contacts",
-    listPath: "/contacts"
   }
+  // {
+  //   listIcon: <img src={'https://oimg.photobucket.com/albums/v636/THASTHATBOY/241fddcdeb225255d8f37267a285d009.png'} height='350px' width='350px'/>,
+  //   // listText: "Contacts",
+  //   listPath: "/contacts"
+  // }
 ]
 const MobileHeader
  = (props) => {
@@ -87,17 +87,48 @@ const MobileHeader
     {/* <Avatar className={classes.avatar} src={avatar} alt="Kay"/> */}
     <Divider />
     <List>
-      {menuItems.map((listItem, key) => (
-      <ListItem button key={key} component={Link} to={listItem.listPath}>
+
+    <ListItem button component={Link} to={menuItems[0].listPath} >
         <ListItemIcon className={classes.listedItem} >
         {/* <div onClick={() => props.history.push(`/algorithms/${props.state.dayAlgo.id}`)}> */}
-          {listItem.listIcon}
+          {menuItems[0].listIcon}
         </ListItemIcon>
         <ListItemText
         className={classes.listedItem}
-        primary={listItem.listText}/>
+        primary={menuItems[0].listText}/>
         </ListItem>
-        ))}
+
+        <ListItem button component={Link} to={menuItems[2].listPath} >
+        <ListItemIcon className={classes.listedItem} >
+        {/* <div onClick={() => props.history.push(`/algorithms/${props.state.dayAlgo.id}`)}> */}
+          {menuItems[2].listIcon}
+        </ListItemIcon>
+        <ListItemText
+        className={classes.listedItem}
+        primary={menuItems[2].listText}/>
+        </ListItem>
+
+        <ListItem button component={Link} onClick={() => props.history.push(`/algorithms/${props.state.dayAlgo.id}`)} >
+        <ListItemIcon className={classes.listedItem} >
+        {/* <div onClick={() => props.history.push(`/algorithms/${props.state.dayAlgo.id}`)}> */}
+          {menuItems[1].listIcon}
+        </ListItemIcon>
+        <ListItemText
+        className={classes.listedItem}
+        primary={menuItems[1].listText}/>
+        </ListItem>
+
+      {/* {menuItems.map((listItem, key) => (
+      <ListItem button key={key} component={Link} to={listItem.listPath} >
+        <ListItemIcon className={classes.listedItem} >
+        {/* <div onClick={() => props.history.push(`/algorithms/${props.state.dayAlgo.id}`)}> */}
+          {/* {listItem.listIcon} */}
+        {/* </ListItemIcon> */}
+        {/* <ListItemText */}
+        {/* className={classes.listedItem} */}
+        {/* primary={listItem.listText}/> */}
+        {/* </ListItem> */}
+        {/* ))}  */}
     </List>
   </Box>
   )

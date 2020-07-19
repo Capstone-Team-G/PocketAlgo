@@ -62,11 +62,19 @@ export default function Landing(props) {
         {/* Hero unit */}
         <div className={classes.main}>
 
-          <Container maxWidth="sm" image='../../public/img/bigdata.png'>
+          <Container maxWidth="sm">
             <div align='center'>
+            {/* <ProductHeroLayout backgroundClassName={classes.background}> */}
+{/* Increase the network loading priority of the background image. */}
+
+{/* <img */}
+{/* // src={backgroundImage} */}
+{/* // alt="increase priority" */}
+{/* /> */}
+
             <img src={logo1} height='250' width='300' align='center'/>
-            <p align='center' margin='10px'> <span style={{color: 'gold', fontFamily: 'true north' , fontSize: '80px'}}> = </span> </p>
-            <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom style={{ fontStyle: 'italic', fontFamily: 'true north' , fontSize: '50px', fontWeight: 'bold'}}>
+            <p align='center' margin='10px'><span style={{color: 'white' , fontSize: '80px'}}>"</span> <span style={{color: 'gold',fontSize: '80px'}}> == <img src='https://media.istockphoto.com/vectors/cartoon-of-businessman-holding-arrow-sign-pointing-down-vector-id926829172?k=6&m=926829172&s=612x612&w=0&h=DZFHTii7JE8zqJJMNWbcV1nhHaaOVvmcQ4JpoFS1dLA=' height='80px' width='80px'></img></span> </p>
+            <Typography align="center" color="textPrimary" style={{ fontStyle: 'italic', fontSize: '50px', fontWeight: 'bold', fontFamily: 'Rock Salt'}}>
             <span style={{color: 'gold'}}> "</span> Algos, To Go <span style={{color: 'gold'}}> " </span>
             </Typography>
             </div>
@@ -94,6 +102,14 @@ export default function Landing(props) {
     </React.Fragment>
   );
 }
+
+{/* <ProductHeroLayout backgroundClassName={classes.background}>
+{/* Increase the network loading priority of the background image. */}
+{/*
+<img
+src={backgroundImage}
+alt="increase priority"
+/> */}
 // onClick={() => props.state.dayAlgo.id ? <Route exact path={`/algorithms/${props.state.dayAlgo.id}`}/> : <h1>Loading... </h1>
 /* <Container className={classes.cardGrid} maxWidth="md">
 
