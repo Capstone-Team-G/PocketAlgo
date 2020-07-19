@@ -98,16 +98,6 @@ const MobileHeader
         primary={menuItems[0].listText}/>
         </ListItem>
 
-        <ListItem button component={Link} onClick={() => props.history.push(`/algorithms/${props.state.dayAlgo.id}`)} >
-        <ListItemIcon className={classes.listedItem} >
-        {/* <div onClick={() => props.history.push(`/algorithms/${props.state.dayAlgo.id}`)}> */}
-          {menuItems[1].listIcon}
-        </ListItemIcon>
-        <ListItemText
-        className={classes.listedItem}
-        primary={menuItems[1].listText}/>
-        </ListItem>
-
         <ListItem button component={Link} to={menuItems[2].listPath} >
         <ListItemIcon className={classes.listedItem} >
         {/* <div onClick={() => props.history.push(`/algorithms/${props.state.dayAlgo.id}`)}> */}
@@ -116,6 +106,16 @@ const MobileHeader
         <ListItemText
         className={classes.listedItem}
         primary={menuItems[2].listText}/>
+        </ListItem>
+
+        <ListItem button component={Link} onClick={() => props.history.push(`/algorithms/${props.state.dayAlgo.id}`)} >
+        <ListItemIcon className={classes.listedItem} >
+        {/* <div onClick={() => props.history.push(`/algorithms/${props.state.dayAlgo.id}`)}> */}
+          {menuItems[1].listIcon}
+        </ListItemIcon>
+        <ListItemText
+        className={classes.listedItem}
+        primary={menuItems[1].listText}/>
         </ListItem>
 
       {/* {menuItems.map((listItem, key) => (

@@ -8,7 +8,7 @@ const data=props.data;
         <div key={data.id}>
             <Grid item xs={12} align='center'>
           <Paper>
-            <h2 align='center' style={{fontFamily: 'Tahoma', fontWeight: 'bold', fontSize: 30, paddingTop: 10 }}> <span style={{color: 'gold'}}> /* </span> {data.name} <span style={{color: 'gold'}}> */ </span> </h2>
+            <h2 align='center' style={{fontFamily: 'Tahoma', fontWeight: 'bold', fontSize: 30, paddingTop: 10 }}> <span style={{color: 'gold' , fontSize: 20}}> /* </span> <span style={{fontSize: 30}}>{data.name}</span>  <span style={{color: 'gold' , fontSize: 20}}> */ </span> </h2>
             <p align='center' style= {{paddingLeft: 50, paddingRight: 50 , paddingBottom: 40}}>{data.description}</p>
             </Paper>
             </Grid>

@@ -47,6 +47,9 @@ export default function Animation(props) {
         nextButtonCheck()
         setPointer(pointer + 1);
       }}>NEXT</button>
+      <br></br>
+      <div align='left' padding='20px'><h1 style= {{color: 'black', fontFamily: 'true north' , fontFamily: 'Rock Salt', fontSize: 14}} align= "center"> <span style={{color: 'gold' , fontSize: 12}}> /* </span> P o w e r _ Y o u r _ C o d e : <span style={{color: 'gold' , fontSize: 12}}> */ </span> <img src='https://media.istockphoto.com/vectors/cartoon-of-businessman-holding-arrow-sign-pointing-down-vector-id926829172?k=6&m=926829172&s=612x612&w=0&h=DZFHTii7JE8zqJJMNWbcV1nhHaaOVvmcQ4JpoFS1dLA=' height='80px' width='80px' ></img></h1></div>
+
     </div>
   )
 }

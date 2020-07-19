@@ -52,7 +52,14 @@ class AlgosByCategories extends React.Component {
     return (
       <div style={{backgroundColor: 'black'}}>
         <Header />
-        <h1 style= {{color: 'white', fontFamily: 'true north' , fontFamily: 'informal', fontSize: 50}} align= "center"> <span style={{color: 'gold'}}> /* </span> Power Your Code: <span style={{color: 'gold'}}> */ </span> </h1>
+
+        <Grid item xs={12} align='center'>
+          <Paper>
+        {/* Place Component Below This Line */}
+        <h1 style= {{color: 'black', fontFamily: 'true north' , fontFamily: 'Rock Salt', fontSize: 14}} align= "center"> <span style={{color: 'gold' , fontSize: 12}}> /* </span> P o w e r _ Y o u r _ C o d e : <span style={{color: 'gold' , fontSize: 12}}> */ </span> <img align='center' src='https://media.istockphoto.com/vectors/cartoon-of-businessman-holding-arrow-sign-pointing-down-vector-id926829172?k=6&m=926829172&s=612x612&w=0&h=DZFHTii7JE8zqJJMNWbcV1nhHaaOVvmcQ4JpoFS1dLA=' height='80px' width='80px'></img></h1>
+
+          </Paper>
+          </Grid>
 
         {this.state.categories.map(category => (
           <div key={category.id}>
@@ -110,9 +117,10 @@ function Category(props) {
   return (
     <div id='category' >
       <div style={styles} onClick={() => onClickHandler()}>
-        <span style={{ color: 'purple' , textDecoration: 'none' , fontFamily: 'informal', fontSize: 50 }}> [ </span>
-        {props.category.name}
-        <span style={{ color: 'purple' , textDecoration: 'none', fontFamily: 'informal', fontSize: 50}}> ] </span>
+        <span style={{ color: 'gold' , textDecoration: 'none' , fontFamily: 'informal', fontSize: 40 }}> [ </span>
+        <span style={{ fontFamily: 'Montserrat Subrayada', fontSize: 50}}> {props.category.name} </span>
+        <span style={{ color: 'gold' , textDecoration: 'none' , fontFamily: 'informal', fontSize: 40 }}> ] </span>
+        <span style={{fontFamily: 'Modak', fontSize: 55}}></span>
       </div>
       <p>{props.category.description}</p>
       <div id='dropdown'>
