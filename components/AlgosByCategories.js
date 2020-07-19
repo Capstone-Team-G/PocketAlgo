@@ -53,7 +53,7 @@ class AlgosByCategories extends React.Component {
       <div style={{backgroundColor: 'black'}}>
         <Header />
         <h1 style= {{color: 'white', fontFamily: 'true north' , fontFamily: 'informal', fontSize: 50}} align= "center"> <span style={{color: 'gold'}}> /* </span> Power Your Code: <span style={{color: 'gold'}}> */ </span> </h1>
-        align='center'
+
         {this.state.categories.map(category => (
           <div key={category.id}>
             <Grid item xs={12} align='center'>

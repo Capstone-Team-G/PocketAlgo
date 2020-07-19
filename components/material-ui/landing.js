@@ -64,6 +64,14 @@ export default function Landing(props) {
 
           <Container maxWidth="sm" image='../../public/img/bigdata.png'>
             <div align='center'>
+            {/* <ProductHeroLayout backgroundClassName={classes.background}> */}
+{/* Increase the network loading priority of the background image. */}
+
+{/* <img */}
+{/* // src={backgroundImage} */}
+{/* // alt="increase priority" */}
+{/* /> */}
+
             <img src={logo1} height='250' width='300' align='center'/>
             <p align='center' margin='10px'> <span style={{color: 'gold', fontFamily: 'true north' , fontSize: '80px'}}> = </span> </p>
             <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom style={{ fontStyle: 'italic', fontFamily: 'true north' , fontSize: '50px', fontWeight: 'bold'}}>
@@ -94,6 +102,14 @@ export default function Landing(props) {
     </React.Fragment>
   );
 }
+
+{/* <ProductHeroLayout backgroundClassName={classes.background}>
+{/* Increase the network loading priority of the background image. */}
+{/*
+<img
+src={backgroundImage}
+alt="increase priority"
+/> */}
 // onClick={() => props.state.dayAlgo.id ? <Route exact path={`/algorithms/${props.state.dayAlgo.id}`}/> : <h1>Loading... </h1>
 /* <Container className={classes.cardGrid} maxWidth="md">
 
