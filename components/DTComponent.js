@@ -58,7 +58,7 @@ DataStructurePage(props) {
             <Grid item xs={12}>
             <Paper>
             {/* Place Component Below This Line */}
-            <h3 align='center' style={{fontFamily: 'copperplate'}}> Algorithms related to {dataStructure.name} <span style={{color: 'gold', fontFamily: 'true north' , fontSize: '20px'}}> = <img align='center' src='https://media.istockphoto.com/vectors/cartoon-of-businessman-holding-arrow-sign-pointing-down-vector-id926829172?k=6&m=926829172&s=612x612&w=0&h=DZFHTii7JE8zqJJMNWbcV1nhHaaOVvmcQ4JpoFS1dLA=' height='80px' width='80px'></img> </span> </h3>
+            <h3 align='center' style={{fontFamily: 'copperplate', align: 'center' , paddingLeft: 20 , paddingRight: 20}}> Algorithms related to {dataStructure.name} <span style={{color: 'gold', fontFamily: 'true north' , fontSize: '20px'}}> = <img align='center' src='https://media.istockphoto.com/vectors/cartoon-of-businessman-holding-arrow-sign-pointing-down-vector-id926829172?k=6&m=926829172&s=612x612&w=0&h=DZFHTii7JE8zqJJMNWbcV1nhHaaOVvmcQ4JpoFS1dLA=' height='80px' width='80px'></img> </span> </h3>
             </Paper>
             </Grid>
 
