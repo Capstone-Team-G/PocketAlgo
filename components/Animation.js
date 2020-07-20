@@ -27,7 +27,7 @@ export default function Animation(props) {
         prevButtonCheck()
         setPointer(pointer - 1);
       }}
-      style={{ border: "solid green 1px", borderRadius: "10px", padding:"10px", variant:"outlined", backgroundColor:"white",  fontSize: 20 , textDecoration: 'none', color: "green"}}
+      style={{cursor:"pointer",  border: "solid green 1px", borderRadius: "10px", padding:"10px", variant:"outlined", backgroundColor:"white",  fontSize: 20 , textDecoration: 'none', color: "green"}}
       >PREV.</button>
         {/* </Button> */}
 
@@ -36,7 +36,7 @@ export default function Animation(props) {
         nextButtonCheck()
         setPointer(pointer + 1);
       }}
-      style={{ border: "solid green 1px", borderRadius: "10px", padding:"10px", variant:"outlined", backgroundColor:"white",  fontSize: 20 , textDecoration: 'none', color: "green"}}
+      style={{cursor:"pointer",  border: "solid green 1px", borderRadius: "10px", padding:"10px", variant:"outlined", backgroundColor:"white",  fontSize: 20 , textDecoration: 'none', color: "green"}}
       >NEXT</button>
       {/* </Button> */}
       <br></br>
