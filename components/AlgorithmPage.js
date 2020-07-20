@@ -15,7 +15,6 @@ import Header from './material-ui/headertemplate';
 import MobileHeader from './material-ui/mobileHeaderTemp'
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
-
 import {
     BrowserView,
     MobileView,
@@ -47,7 +46,9 @@ export default function AlgorithmPage(props) {
 
     return (
         <div style={{backgroundColor: 'black'}}>
+            <MobileView>
            <MobileHeader />
+           </MobileView>
 
             <AlgoViewFunction data={algorithm} />
             <Grid item xs={12} align='center'>

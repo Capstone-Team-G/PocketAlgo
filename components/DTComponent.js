@@ -11,6 +11,21 @@ import Paper from '@material-ui/core/Paper';
 import Footer from './material-ui/footertemplate'
 import MobileHeader from './material-ui/mobileHeaderTemp'
 import logo4 from '../public/img/logo4.png'
+import styled from 'styled-components';
+import {
+    BrowserView,
+    MobileView,
+    isBrowser,
+    isMobile
+  } from "react-device-detect";
+
+const HoverText = styled.p`
+	color: #000;
+	:hover {
+		color: #ed1212;
+		cursor: pointer;
+    }`
+
 export default function
 
 DataStructurePage(props) {
@@ -34,7 +49,9 @@ DataStructurePage(props) {
 
     return (
         <div style={{backgroundColor: 'black'}}>
+            <MobileView>
            <MobileHeader />
+           </MobileView>
 
             <Grid container spacing={3}>
 
@@ -58,17 +75,19 @@ DataStructurePage(props) {
             <Grid item xs={12}>
             <Paper>
             {/* Place Component Below This Line */}
-            <h3 align='center' style={{fontFamily: 'copperplate'}}> Algorithms related to {dataStructure.name} <span style={{color: 'gold', fontFamily: 'true north' , fontSize: '20px'}}> = <img align='center' src='https://media.istockphoto.com/vectors/cartoon-of-businessman-holding-arrow-sign-pointing-down-vector-id926829172?k=6&m=926829172&s=612x612&w=0&h=DZFHTii7JE8zqJJMNWbcV1nhHaaOVvmcQ4JpoFS1dLA=' height='80px' width='80px'></img> </span> </h3>
+            <h3 align='center' style={{fontFamily: 'copperplate', align: 'center' , paddingLeft: 20 , paddingRight: 20}}> Algorithms related to {dataStructure.name} <span style={{color: 'gold', fontFamily: 'true north' , fontSize: '20px'}}> = <img align='center' src='https://media.istockphoto.com/vectors/cartoon-of-businessman-holding-arrow-sign-pointing-down-vector-id926829172?k=6&m=926829172&s=612x612&w=0&h=DZFHTii7JE8zqJJMNWbcV1nhHaaOVvmcQ4JpoFS1dLA=' height='80px' width='80px'></img> </span> </h3>
             </Paper>
             </Grid>
 
             <Grid item xs={12}>
             <Paper>
+            <HoverText>
             {algorithms.map(algorithm => (
 
             <p onClick={() => props.history.push(`/algorithms/${algorithm.id}`)} align='center' key={algorithm.id} style={{ fontFamily: 'patronum' , fontWeight: 'bold', fontSize: 25}}> <span style={{color: 'gold'}}> / </span> {algorithm.name} <span style={{color: 'gold'}}> \ </span> </p>
 
             ))}
+            </HoverText>
              </Paper>
             </Grid>
             </Grid>
