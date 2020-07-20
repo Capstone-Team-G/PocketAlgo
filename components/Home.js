@@ -27,13 +27,13 @@ class Home extends React.Component {
       algorithms: {},
       dayAlgo: {}
     }
+
   }
 
   async componentDidMount() {
     try {
       const apiData = await API.graphql(graphqlOperation(listCategoriess));
       const apiAlgos = await API.graphql(graphqlOperation(listAlgorithmss));
-      // console.log('restics', apiAlgos);
       const categories = apiData.data.listCategoriess.items;
       const algorithms = apiAlgos.data.listAlgorithmss.items;
       this.setState({ categories: categories, dayAlgo: this.randomizerDaily(algorithms), algorithms: algorithms });
@@ -52,11 +52,9 @@ class Home extends React.Component {
 
   algoRandomizer() {
     const arr = this.state.algorithms;
-    // console.log('Yesss!', arr)
     let index = Math.floor(Math.random() * arr.length);
-    let algodId = arr[index].id;
-
-    // return algoId
+    let algoId = arr[index].id;
+    return algoId;
   }
 
   randomOnClickHandler(event) {
@@ -77,29 +75,16 @@ class Home extends React.Component {
   }
 
   render() {
-    // console.log('propssss', this.props)
     return (
-      <div class='mobile' style={{backgroundColor: 'black' , background: 'cover'}}>
-
-        <Header state={this.state} history={this.props.history}/>
+      <div class='mobile' style={{ backgroundColor: 'black', background: 'cover' }}>
+        <Header state={this.state} history={this.props.history} />
         <br></br>
-        <HomeTemp state={this.state} history={this.props.history}/>
-
+        <HomeTemp state={this.state} history={this.props.history} random={this.algoRandomizer} />
         <br></br>
-
         {/* Footer */}
         <br></br>
         <Footer />
         {/* End footer */}
-
-        {/* {this.state.categories.map(rest => (
-          <div key={rest.id}>
-            <p onClick={() => this.onClickHandler(rest.id)}>{rest.name}</p>
-            <p >{rest.description}</p>
-          </div>
-        ))} */}
-
-
       </div>
     );
   }

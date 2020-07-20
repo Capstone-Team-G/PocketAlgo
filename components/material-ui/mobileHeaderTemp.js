@@ -63,11 +63,7 @@ const menuItems = [
     // listText: "Categories",
     listPath: "/bycategories"
   }
-  // {
-  //   listIcon: <img src={'https://oimg.photobucket.com/albums/v636/THASTHATBOY/241fddcdeb225255d8f37267a285d009.png'} height='350px' width='350px'/>,
-  //   // listText: "Contacts",
-  //   listPath: "/contacts"
-  // }
+
 ]
 const MobileHeader
  = (props) => {
@@ -108,27 +104,6 @@ const MobileHeader
         primary={menuItems[2].listText}/>
         </ListItem>
 
-        <ListItem button component={Link} onClick={() => props.history.push(`/algorithms/${props.state.dayAlgo.id}`)} >
-        <ListItemIcon className={classes.listedItem} >
-        {/* <div onClick={() => props.history.push(`/algorithms/${props.state.dayAlgo.id}`)}> */}
-          {menuItems[1].listIcon}
-        </ListItemIcon>
-        <ListItemText
-        className={classes.listedItem}
-        primary={menuItems[1].listText}/>
-        </ListItem>
-
-      {/* {menuItems.map((listItem, key) => (
-      <ListItem button key={key} component={Link} to={listItem.listPath} >
-        <ListItemIcon className={classes.listedItem} >
-        {/* <div onClick={() => props.history.push(`/algorithms/${props.state.dayAlgo.id}`)}> */}
-          {/* {listItem.listIcon} */}
-        {/* </ListItemIcon> */}
-        {/* <ListItemText */}
-        {/* className={classes.listedItem} */}
-        {/* primary={listItem.listText}/> */}
-        {/* </ListItem> */}
-        {/* ))}  */}
     </List>
   </Box>
   )

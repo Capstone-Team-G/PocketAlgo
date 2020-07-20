@@ -17,7 +17,7 @@ import {
     MobileView,
     isBrowser,
     isMobile
-  } from "react-device-detect";
+} from "react-device-detect";
 
 const HoverText = styled.p`
 	color: #000;
@@ -27,7 +27,7 @@ const HoverText = styled.p`
 
 export default function
 
-DataStructurePage(props) {
+    DataStructurePage(props) {
     const [algorithms, setAlgorithms] = useState([]);
     const [dataStructure, setDataStructure] = useState([]);
 
@@ -47,48 +47,48 @@ DataStructurePage(props) {
     }, [])
 
     return (
-        <div style={{backgroundColor: 'black'}}>
+        <div style={{ backgroundColor: 'black' }}>
             <MobileView>
-           <MobileHeader />
-           </MobileView>
+                <MobileHeader />
+            </MobileView>
 
             <Grid container spacing={3}>
 
-            <Grid item xs={12}>
-            <Paper>
-            <AlgoViewFunction data={dataStructure} />
-            </Paper>
-            </Grid>
+                <Grid item xs={12}>
+                    <Paper>
+                        <AlgoViewFunction data={dataStructure} />
+                    </Paper>
+                </Grid>
                 {/* Image */}
-            <Grid item xs={12}>
-            <Paper align='center'>
-            {/* Place Component Below This Line */}
-            <div>
-            {dataStructure.picture !== null &&
-                <img src={dataStructure.picture} style={{ width: 425}}/>}
-                </div>
-            </Paper>
-            </Grid>
+                <Grid item xs={12}>
+                    <Paper align='center'>
+                        {/* Place Component Below This Line */}
+                        <div>
+                            {dataStructure.picture !== null &&
+                                <img src={dataStructure.picture} style={{ width: 425 }} />}
+                        </div>
+                    </Paper>
+                </Grid>
 
-            {/* Algo Example */}
-            <Grid item xs={12}>
-            <Paper>
-            {/* Place Component Below This Line */}
-            <h3 align='center' style={{fontFamily: 'copperplate', align: 'center' , paddingLeft: 20 , paddingRight: 20}}> Algorithms related to {dataStructure.name} <span style={{color: 'gold', fontFamily: 'true north' , fontSize: '20px'}}> = <img align='center' src='https://media.istockphoto.com/vectors/cartoon-of-businessman-holding-arrow-sign-pointing-down-vector-id926829172?k=6&m=926829172&s=612x612&w=0&h=DZFHTii7JE8zqJJMNWbcV1nhHaaOVvmcQ4JpoFS1dLA=' height='80px' width='80px'></img> </span> </h3>
-            </Paper>
-            </Grid>
+                {/* Algo Example */}
+                <Grid item xs={12}>
+                    <Paper>
+                        {/* Place Component Below This Line */}
+                        <h3 align='center' style={{ fontFamily: 'copperplate', align: 'center', paddingLeft: 20, paddingRight: 20 }}> Algorithms related to {dataStructure.name} <span style={{ color: 'gold', fontFamily: 'true north', fontSize: '20px' }}> = <img align='center' src='https://media.istockphoto.com/vectors/cartoon-of-businessman-holding-arrow-sign-pointing-down-vector-id926829172?k=6&m=926829172&s=612x612&w=0&h=DZFHTii7JE8zqJJMNWbcV1nhHaaOVvmcQ4JpoFS1dLA=' height='80px' width='80px'></img> </span> </h3>
+                    </Paper>
+                </Grid>
 
-            <Grid item xs={12}>
-            <Paper>
-            <HoverText>
-            {algorithms.map(algorithm => (
+                <Grid item xs={12}>
+                    <Paper>
+                        <HoverText>
+                            {algorithms.map(algorithm => (
 
-            <p onClick={() => props.history.push(`/algorithms/${algorithm.id}`)} align='center' key={algorithm.id} style={{ fontFamily: 'patronum' , fontWeight: 'bold', fontSize: 25}}> <span style={{color: 'gold'}}> / </span> {algorithm.name} <span style={{color: 'gold'}}> \ </span> </p>
+                                <p onClick={() => props.history.push(`/algorithms/${algorithm.id}`)} align='center' key={algorithm.id} style={{ fontFamily: 'patronum', fontWeight: 'bold', fontSize: 25 }}> <span style={{ color: 'gold' }}> / </span> {algorithm.name} <span style={{ color: 'gold' }}> \ </span> </p>
 
-            ))}
-            </HoverText>
-             </Paper>
-            </Grid>
+                            ))}
+                        </HoverText>
+                    </Paper>
+                </Grid>
             </Grid>
             <Footer />
         </div>

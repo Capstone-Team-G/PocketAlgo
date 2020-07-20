@@ -23,19 +23,11 @@ export default function Animation(props) {
     <div align='center'>
       <div>{props.pictures ? <img src={props.pictures[pointer]} style={{paddingTop: 20 , width: 425}}/> : null}</div>
       <p style={{ fontWeight: 'bold' }}>{props.picturesDescription ? props.picturesDescription[pointer] : null}</p>
-
-      {/* <Button id='previous' onClick={() => {
-        prevButtonCheck()
-        setPointer(pointer - 1);
-      }} variant="outlined" color="inherit" style={{ color: 'green' ,  fontSize: 20 , textDecoration: 'none', paddingbottom: 10}}>
-                   PREVIOUS
-                  </Button> */}
-        {/* <Button paddingbottom="20px" paddingRight="20px" variant="outlined" color="inherit" style={{ color: 'green' ,  fontSize: 12 , fontWeight: 'bold', textDecoration: 'none'}}> */}
       <button id='previous' onClick={() => {
         prevButtonCheck()
         setPointer(pointer - 1);
       }}
-      style={{ border: "solid green 1px", borderRadius: "10px", padding:"10px", variant:"outlined", backgroundColor:"white",  fontSize: 20 , textDecoration: 'none', color: "green"}}
+      style={{cursor:"pointer",  border: "solid green 1px", borderRadius: "10px", padding:"10px", variant:"outlined", backgroundColor:"white",  fontSize: 20 , textDecoration: 'none', color: "green"}}
       >PREV.</button>
         {/* </Button> */}
 
@@ -44,7 +36,7 @@ export default function Animation(props) {
         nextButtonCheck()
         setPointer(pointer + 1);
       }}
-      style={{ border: "solid green 1px", borderRadius: "10px", padding:"10px", variant:"outlined", backgroundColor:"white",  fontSize: 20 , textDecoration: 'none', color: "green"}}
+      style={{cursor:"pointer",  border: "solid green 1px", borderRadius: "10px", padding:"10px", variant:"outlined", backgroundColor:"white",  fontSize: 20 , textDecoration: 'none', color: "green"}}
       >NEXT</button>
       {/* </Button> */}
       <br></br>
@@ -54,4 +46,3 @@ export default function Animation(props) {
   )
 }
 
-// style={{paddingbottom: 20 }}
