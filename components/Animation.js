@@ -24,12 +24,7 @@ export default function Animation(props) {
       <div>{props.pictures ? <img src={props.pictures[pointer]} style={{paddingTop: 20 , width: 425}}/> : null}</div>
       <p style={{ fontWeight: 'bold' }}>{props.picturesDescription ? props.picturesDescription[pointer] : null}</p>
 
-      {/* <Button id='previous' onClick={() => {
-        prevButtonCheck()
-        setPointer(pointer - 1);
-      }} variant="outlined" color="inherit" style={{ color: 'green' ,  fontSize: 20 , textDecoration: 'none', paddingbottom: 10}}>
-                   PREVIOUS
-                  </Button> */}
+
         <Button paddingbottom="20px" paddingRight="20px" variant="outlined" color="inherit" style={{ color: 'green' ,  fontSize: 12 , fontWeight: 'bold', textDecoration: 'none'}}>
       <p id='previous' onClick={() => {
         prevButtonCheck()
@@ -50,4 +45,3 @@ export default function Animation(props) {
   )
 }
 
-// style={{paddingbottom: 20 }}

@@ -44,7 +44,7 @@ export default function HomeTemp(props) {
     <h1 align='center' style={{ fontFamily: 'Montserrat Subrayada' , fontSize: 55}}><span style={{fontFamily: 'Modak', fontWeight: 'lighter' ,fontSize: 55}}>View</span> <img src='https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimage.flaticon.com%2Ficons%2Fpng%2F512%2F36%2F36911.png&f=1&nofb=1' height='20px' width='20px'></img> <br></br>
     <Link style={{ color: 'green' , textDecoration: 'none' }}>
     <span style={{ color: 'gold' , textDecoration: 'none' , fontSize: 45}}> [ </span>
-    <span onClick={() => props.history.push(`/algorithms/${props.state.dayAlgo.id}`)}> Random Algo</span>
+    <span onClick={() => props.history.push(`/algorithms/${props.random()}`)}> Random Algo</span>
 
     <span style={{ color: 'gold' , textDecoration: 'none' , fontSize: 45}}> ] </span>
     </Link>
