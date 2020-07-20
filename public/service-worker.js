@@ -225,25 +225,28 @@ define("./service-worker.js",['./workbox-64f1e998'], function (workbox) { 'use s
     "revision": "e4e6242772ed19e5a37ef84f6b162534"
   }, {
     "url": "img/AboutUs.png",
-    "revision": "e4e6242772ed19e5a37ef84f6b162534"
+    "revision": "d41d8cd98f00b204e9800998ecf8427e"
   }, {
     "url": "img/AlgoOfTheDay.png",
-    "revision": "c1b3ec490e31f66f782fab4c155454cf"
+    "revision": "d41d8cd98f00b204e9800998ecf8427e"
   }, {
     "url": "img/Algotree.jpg",
     "revision": "551426e11179a105b7f63628fc53d9d8"
   }, {
+    "url": "img/AppLogo.png",
+    "revision": "bcbc1611de55a54d23d38574f432ab24"
+  }, {
     "url": "img/Categories.png",
-    "revision": "d4b9fd4a445e6a97d649668c3607628c"
+    "revision": "d41d8cd98f00b204e9800998ecf8427e"
   }, {
     "url": "img/Home.png",
-    "revision": "188de43eb4d75f1f87a0718b7d5169db"
+    "revision": "d41d8cd98f00b204e9800998ecf8427e"
   }, {
     "url": "img/bigdata.png",
-    "revision": "91c5e9936b7af7b13ba107103084b2ad"
+    "revision": "d41d8cd98f00b204e9800998ecf8427e"
   }, {
     "url": "img/logo1.png",
-    "revision": "86ddf3ff5bb0818c85dca0a8e4208643"
+    "revision": "d41d8cd98f00b204e9800998ecf8427e"
   }, {
     "url": "img/logo2.png",
     "revision": "e512ef2290266a0436ac686fbc541778"
@@ -258,7 +261,7 @@ define("./service-worker.js",['./workbox-64f1e998'], function (workbox) { 'use s
     "revision": "5e9ae2098b2582470eac2ac506ebc890"
   }, {
     "url": "manifest.json",
-    "revision": "d41d8cd98f00b204e9800998ecf8427e"
+    "revision": "ea46c0c6b44f4cadb3bd30045c6a9d62"
   }, {
     "url": "maskable_icon.png",
     "revision": "d41d8cd98f00b204e9800998ecf8427e"

@@ -72,7 +72,7 @@ export default function Landing(props) {
 {/* // alt="increase priority" */}
 {/* /> */}
 
-            <img src={logo1} height='250' width='300' align='center'/>
+            <img src={'https://hosting.photobucket.com/images/v636/THASTHATBOY/logo1_200x200.png?width=1920&height=1080&fit=bounds'} height='250' width='300' align='center'/>
             <p align='center' margin='10px'><span style={{color: 'white' , fontSize: '80px'}}>"</span> <span style={{color: 'gold',fontSize: '80px'}}> == <img src='https://media.istockphoto.com/vectors/cartoon-of-businessman-holding-arrow-sign-pointing-down-vector-id926829172?k=6&m=926829172&s=612x612&w=0&h=DZFHTii7JE8zqJJMNWbcV1nhHaaOVvmcQ4JpoFS1dLA=' height='80px' width='80px'></img></span> </p>
             <Typography align="center" color="textPrimary" style={{ fontFamily: 'Rock Salt', fontStyle: 'italic', fontSize: '50px', fontWeight: 'bold'}}>
             <span style={{color: 'gold'}}> "</span> Algos, To Go <span style={{color: 'gold'}}> " </span>

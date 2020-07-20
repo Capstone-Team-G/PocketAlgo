@@ -11,6 +11,21 @@ import Paper from '@material-ui/core/Paper';
 import Footer from './material-ui/footertemplate'
 import MobileHeader from './material-ui/mobileHeaderTemp'
 import logo4 from '../public/img/logo4.png'
+import styled from 'styled-components';
+import {
+    BrowserView,
+    MobileView,
+    isBrowser,
+    isMobile
+  } from "react-device-detect";
+
+const HoverText = styled.p`
+	color: #000;
+	:hover {
+		color: #ed1212;
+		cursor: pointer;
+    }`
+
 export default function
 
 DataStructurePage(props) {
@@ -34,7 +49,9 @@ DataStructurePage(props) {
 
     return (
         <div style={{backgroundColor: 'black'}}>
+            <MobileView>
            <MobileHeader />
+           </MobileView>
 
             <Grid container spacing={3}>
 
@@ -64,11 +81,13 @@ DataStructurePage(props) {
 
             <Grid item xs={12}>
             <Paper>
+            <HoverText>
             {algorithms.map(algorithm => (
 
             <p onClick={() => props.history.push(`/algorithms/${algorithm.id}`)} align='center' key={algorithm.id} style={{ fontFamily: 'patronum' , fontWeight: 'bold', fontSize: 25}}> <span style={{color: 'gold'}}> / </span> {algorithm.name} <span style={{color: 'gold'}}> \ </span> </p>
 
             ))}
+            </HoverText>
              </Paper>
             </Grid>
             </Grid>
