@@ -218,6 +218,9 @@ define("./service-worker.js",['./workbox-64f1e998'], function (workbox) { 'use s
     "url": "f9f16284917c14d6a24a64a337c65e2f.png",
     "revision": "d41d8cd98f00b204e9800998ecf8427e"
   }, {
+    "url": "favicon.ico",
+    "revision": "320d5985fc7ab7a288f5d170a8f0c4a4"
+  }, {
     "url": "img/.DS_Store",
     "revision": "aa43c104295cf68f5701cd15a254d476"
   }, {
