@@ -37,7 +37,7 @@
     "@material-ui/icons": "^4.9.1",
     "ace-builds": "^1.4.12",
     "aws-amplify": "^3.0.18",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "chalk": "^4.1.0",
     "compression": "^1.7.4",
     "express": "^4.17.1",
